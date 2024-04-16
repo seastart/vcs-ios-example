@@ -7,6 +7,7 @@
 //
 
 #import "FWBaseNavigationViewController.h"
+#import "FWDrawingViewController.h"
 
 @interface FWBaseNavigationViewController () <UIGestureRecognizerDelegate, UINavigationControllerDelegate>
 
@@ -69,10 +70,10 @@
         /// 如果堆栈内的视图控制器数量为1，说明只有根控制器，将当前的视图控制器清空，为了下面的方法禁用侧滑手势
         self.currentViewController = nil;
     } else {
-        /// if ([[viewController class] isKindOfClass:[FWRoomViewController class]]) {
+        if ([[viewController class] isKindOfClass:[FWDrawingViewController class]]) {
             /// 如果当前push的视图为房间室控制器，置空当前试图控制器用来限制侧滑手势
-            /// self.currentViewController = nil;
-        /// }
+            self.currentViewController = nil;
+        }
         /// 将push进来的视图控制器赋值给当前的视图控制器
         self.currentViewController = viewController;
     }
@@ -84,10 +85,10 @@
     
     /// 首先在这确定是不是我们需要管理的侧滑返回手势
     if (gestureRecognizer == self.interactivePopGestureRecognizer) {
-        /// if ([self.currentViewController isKindOfClass:[FWRoomViewController class]]) {
+        if ([self.currentViewController isKindOfClass:[FWDrawingViewController class]]) {
             /// 如果当前在房间室中，则禁用侧滑手势。
-            /// return NO;
-        /// }
+            return NO;
+        }
         if (self.currentViewController == self.topViewController) {
             /// 如果当前的视图控制器存在说明堆栈内的控制器数量大于 1，允许激活侧滑手势
             return YES;

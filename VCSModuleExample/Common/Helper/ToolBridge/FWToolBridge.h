@@ -49,6 +49,12 @@ typedef void (^FWPermissionsResultBlock)(BOOL status);
 /// - Parameter text: 原始串
 + (nullable NSString *)clearMarginsBlank:(nullable NSString *)text;
 
+#pragma mark - HmacSHA1方式加密的字符串
+/// HmacSHA1方式加密的字符串
+/// @param key 加密Key
+/// @param data 加密数据
++ (NSString *)HmacSha1:(NSString *)key data:(NSString *)data;
+
 #pragma mark - 验证房间号码是否有效
 /// 验证房间号码是否有效
 /// - Parameter roomNo: 房间号码

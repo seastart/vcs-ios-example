@@ -29,8 +29,6 @@
 /// 数据模型
 #import <YYModel/YYModel.h>
 
-/// 程序入口
-#import "FWAppDelegate.h"
 /// 工程宏定义以及工具类
 #import "FWCommons.h"
 

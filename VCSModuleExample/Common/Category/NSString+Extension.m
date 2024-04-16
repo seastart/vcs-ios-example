@@ -64,4 +64,18 @@
     return NO;
 }
 
+#pragma mark - 验证字符串是否IP地址
+/// 验证字符串是否IP地址
+- (BOOL)isValidateIP {
+    
+    NSArray *ipArray = [self componentsSeparatedByString:@"."];
+    if (ipArray.count != 4) {
+        return NO;
+    }
+    
+    NSString *pattern = @"^(\\d{1,2}|1\\d\\d|2[0-4]\\d|25[0-5]).(\\d{1,2}|1\\d\\d|2[0-4]\\d|25[0-5]).(\\d{1,2}|1\\d\\d|2[0-4]\\d|25[0-5]).(\\d{1,2}|1\\d\\d|2[0-4]\\d|25[0-5])$";
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", pattern];
+    return [predicate evaluateWithObject:self];
+}
+
 @end

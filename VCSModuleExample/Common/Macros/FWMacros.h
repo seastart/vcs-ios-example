@@ -10,7 +10,7 @@
 #define FWMacros_h
 
 #pragma mark - 自定义输出
-#define SGLOG(format,...) NSLog((@"[RTCLOG][%@][%d] " format),[[NSString stringWithUTF8String:__FILE__] lastPathComponent], __LINE__,##__VA_ARGS__)
+#define SGLOG(format,...) NSLog((@"[SGLOG][%@][%d] " format),[[NSString stringWithUTF8String:__FILE__] lastPathComponent], __LINE__,##__VA_ARGS__)
 /// #define SGLOG(str, args...) ((void)0)
 
 #pragma mark - 是否是iPad
@@ -54,6 +54,9 @@
 #pragma mark - WeakSelf
 #define WeakSelf() __weak typeof(self) weakSelf = self
 #define StrongSelf(weakSelf) __strong typeof(self) strongSelf = weakSelf
+
+#pragma mark - NSUserDefaults
+#define kSGUserDefaults [NSUserDefaults standardUserDefaults]
 
 #pragma mark - 类名转换成字符串
 #define kStringFromClass(className) NSStringFromClass([className class])

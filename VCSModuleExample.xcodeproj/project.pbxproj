@@ -19,25 +19,37 @@
 		F40B633F26C2901F00F42370 /* VCSModuleExample-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F40B633E26C2901F00F42370 /* VCSModuleExample-Info.plist */; };
 		F40B634326C292DB00F42370 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F40B634126C292C000F42370 /* LaunchScreen.storyboard */; };
 		F4219D2229AC88510069483A /* Login.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F4219D2129AC88510069483A /* Login.xcassets */; };
-		F4219D2529ACB1C70069483A /* FWUserExtendModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F4219D2429ACB1C70069483A /* FWUserExtendModel.m */; };
 		F4219D2C29AD988C0069483A /* CALayer+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = F4219D2B29AD988C0069483A /* CALayer+Extension.m */; };
 		F4219D3829ADABAB0069483A /* UIScrollView+AutoHeight.m in Sources */ = {isa = PBXBuildFile; fileRef = F4219D3529ADABAB0069483A /* UIScrollView+AutoHeight.m */; };
 		F4219D3929ADABAB0069483A /* UITextView+AutoHeight.m in Sources */ = {isa = PBXBuildFile; fileRef = F4219D3629ADABAB0069483A /* UITextView+AutoHeight.m */; };
 		F4219D5229ADD2530069483A /* FWDateBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = F4219D5129ADD2530069483A /* FWDateBridge.m */; };
 		F4219D5529ADD78E0069483A /* UIView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = F4219D5429ADD78E0069483A /* UIView+Extension.m */; };
 		F43AD83A2727EE670056B3EE /* FWConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = F43AD8392727EE670056B3EE /* FWConstants.m */; };
-		F43AD8542728EE8B0056B3EE /* FWLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F43AD8522728EE8B0056B3EE /* FWLoginViewController.m */; };
-		F43AD8552728EE8B0056B3EE /* FWLoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F43AD8532728EE8B0056B3EE /* FWLoginViewController.xib */; };
 		F43AD8592728EF4D0056B3EE /* FWEntryBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = F43AD8582728EF4D0056B3EE /* FWEntryBridge.m */; };
-		F43AD85C2728F1E70056B3EE /* FWLoginViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F43AD85B2728F1E70056B3EE /* FWLoginViewModel.m */; };
 		F43CDA9326C69EEE00FBB94D /* Home.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F43CDA9226C69EEE00FBB94D /* Home.xcassets */; };
 		F45C830C27D6F50D008EEA31 /* Room.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F45C830B27D6F50D008EEA31 /* Room.xcassets */; };
-		F47A3B5627D1F0FA00C88F2C /* FWStoreDataBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = F47A3B5527D1F0FA00C88F2C /* FWStoreDataBridge.m */; };
+		F47FD37B2BCE6F28006579F2 /* FWLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F47FD3792BCE6F28006579F2 /* FWLoginViewController.m */; };
+		F47FD37C2BCE6F28006579F2 /* FWLoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F47FD37A2BCE6F28006579F2 /* FWLoginViewController.xib */; };
+		F47FD37F2BCE7443006579F2 /* FWLoginModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F47FD37E2BCE7443006579F2 /* FWLoginModel.m */; };
+		F47FD3872BCE7E35006579F2 /* FWDrawingConfigViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F47FD3812BCE7E35006579F2 /* FWDrawingConfigViewController.m */; };
+		F47FD3882BCE7E35006579F2 /* FWDrawingConfigViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F47FD3822BCE7E35006579F2 /* FWDrawingConfigViewController.xib */; };
+		F47FD3892BCE7E35006579F2 /* FWDrawingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F47FD3842BCE7E35006579F2 /* FWDrawingViewController.m */; };
+		F47FD38A2BCE7E35006579F2 /* FWDrawingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F47FD3852BCE7E35006579F2 /* FWDrawingViewController.xib */; };
+		F47FD3922BCE7EFA006579F2 /* FWHomeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F47FD38C2BCE7EFA006579F2 /* FWHomeTableViewCell.m */; };
+		F47FD3932BCE7EFA006579F2 /* FWHomeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F47FD38D2BCE7EFA006579F2 /* FWHomeTableViewCell.xib */; };
+		F47FD3942BCE7EFA006579F2 /* FWHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F47FD38F2BCE7EFA006579F2 /* FWHomeViewController.m */; };
+		F47FD3952BCE7EFA006579F2 /* FWHomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F47FD3902BCE7EFA006579F2 /* FWHomeViewController.xib */; };
+		F47FD39B2BCE7FBC006579F2 /* FWServeConfigViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F47FD3992BCE7FBC006579F2 /* FWServeConfigViewController.m */; };
+		F47FD39C2BCE7FBC006579F2 /* FWServeConfigViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F47FD39A2BCE7FBC006579F2 /* FWServeConfigViewController.xib */; };
+		F47FD3A32BCE80F4006579F2 /* FWScreenCastingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F47FD39E2BCE80F4006579F2 /* FWScreenCastingViewController.m */; };
+		F47FD3A42BCE80F4006579F2 /* FWScreenCastingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F47FD39F2BCE80F4006579F2 /* FWScreenCastingViewController.xib */; };
+		F47FD3A52BCE80F4006579F2 /* FWScreenCastingViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F47FD3A12BCE80F4006579F2 /* FWScreenCastingViewModel.m */; };
+		F47FD3A92BCE8201006579F2 /* FWCastingBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = F47FD3A72BCE8201006579F2 /* FWCastingBridge.m */; };
+		F47FD3AE2BCE99E1006579F2 /* FWRegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F47FD3AC2BCE99E1006579F2 /* FWRegisterViewController.m */; };
+		F47FD3AF2BCE99E1006579F2 /* FWRegisterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F47FD3AD2BCE99E1006579F2 /* FWRegisterViewController.xib */; };
 		F482EEF829B6D0F500815C9C /* FWBaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F482EEF729B6D0F500815C9C /* FWBaseModel.m */; };
 		F482EEFB29B6D15200815C9C /* FWNetworkBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = F482EEFA29B6D15200815C9C /* FWNetworkBridge.m */; };
-		F482EEFE29B6D2D100815C9C /* FWInterfaces.m in Sources */ = {isa = PBXBuildFile; fileRef = F482EEFD29B6D2D100815C9C /* FWInterfaces.m */; };
 		F482EF0229B6DF9900815C9C /* FWToolBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = F482EF0129B6DF9900815C9C /* FWToolBridge.m */; };
-		F482EF0529B6E1CC00815C9C /* FWAuthToken.m in Sources */ = {isa = PBXBuildFile; fileRef = F482EF0429B6E1CC00815C9C /* FWAuthToken.m */; };
 		F482EF2A29BEE2D900815C9C /* FWEnum.m in Sources */ = {isa = PBXBuildFile; fileRef = F482EF2929BEE2D900815C9C /* FWEnum.m */; };
 		F482EF2E29BF286A00815C9C /* FWLogTraceBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = F482EF2D29BF286A00815C9C /* FWLogTraceBridge.m */; };
 		F482EF3429C4187F00815C9C /* NSString+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = F482EF3329C4187F00815C9C /* NSString+Extension.m */; };
@@ -127,8 +139,6 @@
 		F40B634026C2905500F42370 /* VCSModuleExample-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "VCSModuleExample-Prefix.pch"; sourceTree = "<group>"; };
 		F40B634126C292C000F42370 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F4219D2129AC88510069483A /* Login.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Login.xcassets; sourceTree = "<group>"; };
-		F4219D2329ACB1C70069483A /* FWUserExtendModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FWUserExtendModel.h; sourceTree = "<group>"; };
-		F4219D2429ACB1C70069483A /* FWUserExtendModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FWUserExtendModel.m; sourceTree = "<group>"; };
 		F4219D2A29AD988C0069483A /* CALayer+Extension.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CALayer+Extension.h"; sourceTree = "<group>"; };
 		F4219D2B29AD988C0069483A /* CALayer+Extension.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "CALayer+Extension.m"; sourceTree = "<group>"; };
 		F4219D3429ADABAB0069483A /* UITextView+AutoHeight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextView+AutoHeight.h"; sourceTree = "<group>"; };
@@ -143,27 +153,46 @@
 		F437E6CE2B32E0BA00C76967 /* VCSReplayBroadcastUpload.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = VCSReplayBroadcastUpload.entitlements; sourceTree = "<group>"; };
 		F43AD8382727EE670056B3EE /* FWConstants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FWConstants.h; sourceTree = "<group>"; };
 		F43AD8392727EE670056B3EE /* FWConstants.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FWConstants.m; sourceTree = "<group>"; };
-		F43AD8512728EE8B0056B3EE /* FWLoginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FWLoginViewController.h; sourceTree = "<group>"; };
-		F43AD8522728EE8B0056B3EE /* FWLoginViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FWLoginViewController.m; sourceTree = "<group>"; };
-		F43AD8532728EE8B0056B3EE /* FWLoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FWLoginViewController.xib; sourceTree = "<group>"; };
 		F43AD8572728EF4D0056B3EE /* FWEntryBridge.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FWEntryBridge.h; sourceTree = "<group>"; };
 		F43AD8582728EF4D0056B3EE /* FWEntryBridge.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FWEntryBridge.m; sourceTree = "<group>"; };
-		F43AD85A2728F1E70056B3EE /* FWLoginViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FWLoginViewModel.h; sourceTree = "<group>"; };
-		F43AD85B2728F1E70056B3EE /* FWLoginViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FWLoginViewModel.m; sourceTree = "<group>"; };
 		F43CDA9226C69EEE00FBB94D /* Home.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Home.xcassets; sourceTree = "<group>"; };
 		F45C830B27D6F50D008EEA31 /* Room.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Room.xcassets; sourceTree = "<group>"; };
-		F47A3B5427D1F0FA00C88F2C /* FWStoreDataBridge.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FWStoreDataBridge.h; sourceTree = "<group>"; };
-		F47A3B5527D1F0FA00C88F2C /* FWStoreDataBridge.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FWStoreDataBridge.m; sourceTree = "<group>"; };
+		F47FD3782BCE6F28006579F2 /* FWLoginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FWLoginViewController.h; sourceTree = "<group>"; };
+		F47FD3792BCE6F28006579F2 /* FWLoginViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FWLoginViewController.m; sourceTree = "<group>"; };
+		F47FD37A2BCE6F28006579F2 /* FWLoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FWLoginViewController.xib; sourceTree = "<group>"; };
+		F47FD37D2BCE7443006579F2 /* FWLoginModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FWLoginModel.h; sourceTree = "<group>"; };
+		F47FD37E2BCE7443006579F2 /* FWLoginModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FWLoginModel.m; sourceTree = "<group>"; };
+		F47FD3802BCE7E35006579F2 /* FWDrawingConfigViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FWDrawingConfigViewController.h; sourceTree = "<group>"; };
+		F47FD3812BCE7E35006579F2 /* FWDrawingConfigViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FWDrawingConfigViewController.m; sourceTree = "<group>"; };
+		F47FD3822BCE7E35006579F2 /* FWDrawingConfigViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FWDrawingConfigViewController.xib; sourceTree = "<group>"; };
+		F47FD3832BCE7E35006579F2 /* FWDrawingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FWDrawingViewController.h; sourceTree = "<group>"; };
+		F47FD3842BCE7E35006579F2 /* FWDrawingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FWDrawingViewController.m; sourceTree = "<group>"; };
+		F47FD3852BCE7E35006579F2 /* FWDrawingViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FWDrawingViewController.xib; sourceTree = "<group>"; };
+		F47FD38B2BCE7EFA006579F2 /* FWHomeTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FWHomeTableViewCell.h; sourceTree = "<group>"; };
+		F47FD38C2BCE7EFA006579F2 /* FWHomeTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FWHomeTableViewCell.m; sourceTree = "<group>"; };
+		F47FD38D2BCE7EFA006579F2 /* FWHomeTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FWHomeTableViewCell.xib; sourceTree = "<group>"; };
+		F47FD38E2BCE7EFA006579F2 /* FWHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FWHomeViewController.h; sourceTree = "<group>"; };
+		F47FD38F2BCE7EFA006579F2 /* FWHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FWHomeViewController.m; sourceTree = "<group>"; };
+		F47FD3902BCE7EFA006579F2 /* FWHomeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FWHomeViewController.xib; sourceTree = "<group>"; };
+		F47FD3982BCE7FBC006579F2 /* FWServeConfigViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FWServeConfigViewController.h; sourceTree = "<group>"; };
+		F47FD3992BCE7FBC006579F2 /* FWServeConfigViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FWServeConfigViewController.m; sourceTree = "<group>"; };
+		F47FD39A2BCE7FBC006579F2 /* FWServeConfigViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FWServeConfigViewController.xib; sourceTree = "<group>"; };
+		F47FD39D2BCE80F4006579F2 /* FWScreenCastingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FWScreenCastingViewController.h; sourceTree = "<group>"; };
+		F47FD39E2BCE80F4006579F2 /* FWScreenCastingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FWScreenCastingViewController.m; sourceTree = "<group>"; };
+		F47FD39F2BCE80F4006579F2 /* FWScreenCastingViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FWScreenCastingViewController.xib; sourceTree = "<group>"; };
+		F47FD3A02BCE80F4006579F2 /* FWScreenCastingViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FWScreenCastingViewModel.h; sourceTree = "<group>"; };
+		F47FD3A12BCE80F4006579F2 /* FWScreenCastingViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FWScreenCastingViewModel.m; sourceTree = "<group>"; };
+		F47FD3A62BCE8201006579F2 /* FWCastingBridge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FWCastingBridge.h; sourceTree = "<group>"; };
+		F47FD3A72BCE8201006579F2 /* FWCastingBridge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FWCastingBridge.m; sourceTree = "<group>"; };
+		F47FD3AB2BCE99E1006579F2 /* FWRegisterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FWRegisterViewController.h; sourceTree = "<group>"; };
+		F47FD3AC2BCE99E1006579F2 /* FWRegisterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FWRegisterViewController.m; sourceTree = "<group>"; };
+		F47FD3AD2BCE99E1006579F2 /* FWRegisterViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FWRegisterViewController.xib; sourceTree = "<group>"; };
 		F482EEF629B6D0F500815C9C /* FWBaseModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FWBaseModel.h; sourceTree = "<group>"; };
 		F482EEF729B6D0F500815C9C /* FWBaseModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FWBaseModel.m; sourceTree = "<group>"; };
 		F482EEF929B6D15200815C9C /* FWNetworkBridge.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FWNetworkBridge.h; sourceTree = "<group>"; };
 		F482EEFA29B6D15200815C9C /* FWNetworkBridge.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FWNetworkBridge.m; sourceTree = "<group>"; };
-		F482EEFC29B6D2D100815C9C /* FWInterfaces.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FWInterfaces.h; sourceTree = "<group>"; };
-		F482EEFD29B6D2D100815C9C /* FWInterfaces.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FWInterfaces.m; sourceTree = "<group>"; };
 		F482EF0029B6DF9900815C9C /* FWToolBridge.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FWToolBridge.h; sourceTree = "<group>"; };
 		F482EF0129B6DF9900815C9C /* FWToolBridge.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FWToolBridge.m; sourceTree = "<group>"; };
-		F482EF0329B6E1CC00815C9C /* FWAuthToken.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FWAuthToken.h; sourceTree = "<group>"; };
-		F482EF0429B6E1CC00815C9C /* FWAuthToken.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FWAuthToken.m; sourceTree = "<group>"; };
 		F482EF2829BEE2D900815C9C /* FWEnum.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FWEnum.h; sourceTree = "<group>"; };
 		F482EF2929BEE2D900815C9C /* FWEnum.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FWEnum.m; sourceTree = "<group>"; };
 		F482EF2C29BF286A00815C9C /* FWLogTraceBridge.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FWLogTraceBridge.h; sourceTree = "<group>"; };
@@ -327,12 +356,12 @@
 		F40B5D5326C27D0A00F42370 /* Helper */ = {
 			isa = PBXGroup;
 			children = (
+				F47FD3A82BCE8201006579F2 /* CastingBridge */,
 				F482EF2B29BF285600815C9C /* LogTraceBridge */,
 				F482EEFF29B6DF8E00815C9C /* ToolBridge */,
 				F482EEF529B6CF1600815C9C /* NetworkBridge */,
 				F4C417BD29B1A83D00A7EBCB /* TimerBridge */,
 				F4219D4F29ADD2440069483A /* DateBridge */,
-				F47A3B5327D1F0EC00C88F2C /* StoreDataBridge */,
 				F40B5D9E26C27D0B00F42370 /* ToastBridge */,
 				F43AD8562728EEA20056B3EE /* EntryBridge */,
 			);
@@ -353,6 +382,11 @@
 			children = (
 				F40B618426C27D0C00F42370 /* Base */,
 				F43AD8502728EE690056B3EE /* Login */,
+				F47FD3AA2BCE99D2006579F2 /* Register */,
+				F47FD3972BCE7F6C006579F2 /* ServeConfig */,
+				F47FD3912BCE7EFA006579F2 /* Home */,
+				F47FD3A22BCE80F4006579F2 /* ScreenCasting */,
+				F47FD3862BCE7E35006579F2 /* Drawing */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -366,36 +400,6 @@
 				F40B618626C27D0C00F42370 /* FWBaseViewController.m */,
 			);
 			path = Base;
-			sourceTree = "<group>";
-		};
-		F4219D2629ACB6090069483A /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				F4219D2329ACB1C70069483A /* FWUserExtendModel.h */,
-				F4219D2429ACB1C70069483A /* FWUserExtendModel.m */,
-				F482EF0329B6E1CC00815C9C /* FWAuthToken.h */,
-				F482EF0429B6E1CC00815C9C /* FWAuthToken.m */,
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		F4219D2729ACB6190069483A /* View */ = {
-			isa = PBXGroup;
-			children = (
-				F43AD8512728EE8B0056B3EE /* FWLoginViewController.h */,
-				F43AD8522728EE8B0056B3EE /* FWLoginViewController.m */,
-				F43AD8532728EE8B0056B3EE /* FWLoginViewController.xib */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		F4219D2829ACB6240069483A /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-				F43AD85A2728F1E70056B3EE /* FWLoginViewModel.h */,
-				F43AD85B2728F1E70056B3EE /* FWLoginViewModel.m */,
-			);
-			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		F4219D2929AD97510069483A /* Category */ = {
@@ -439,8 +443,6 @@
 				F482EF2929BEE2D900815C9C /* FWEnum.m */,
 				F43AD8382727EE670056B3EE /* FWConstants.h */,
 				F43AD8392727EE670056B3EE /* FWConstants.m */,
-				F482EEFC29B6D2D100815C9C /* FWInterfaces.h */,
-				F482EEFD29B6D2D100815C9C /* FWInterfaces.m */,
 			);
 			path = Constants;
 			sourceTree = "<group>";
@@ -448,9 +450,11 @@
 		F43AD8502728EE690056B3EE /* Login */ = {
 			isa = PBXGroup;
 			children = (
-				F4219D2629ACB6090069483A /* Model */,
-				F4219D2729ACB6190069483A /* View */,
-				F4219D2829ACB6240069483A /* ViewModel */,
+				F47FD3782BCE6F28006579F2 /* FWLoginViewController.h */,
+				F47FD3792BCE6F28006579F2 /* FWLoginViewController.m */,
+				F47FD37A2BCE6F28006579F2 /* FWLoginViewController.xib */,
+				F47FD37D2BCE7443006579F2 /* FWLoginModel.h */,
+				F47FD37E2BCE7443006579F2 /* FWLoginModel.m */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -464,13 +468,71 @@
 			path = EntryBridge;
 			sourceTree = "<group>";
 		};
-		F47A3B5327D1F0EC00C88F2C /* StoreDataBridge */ = {
+		F47FD3862BCE7E35006579F2 /* Drawing */ = {
 			isa = PBXGroup;
 			children = (
-				F47A3B5427D1F0FA00C88F2C /* FWStoreDataBridge.h */,
-				F47A3B5527D1F0FA00C88F2C /* FWStoreDataBridge.m */,
+				F47FD3802BCE7E35006579F2 /* FWDrawingConfigViewController.h */,
+				F47FD3812BCE7E35006579F2 /* FWDrawingConfigViewController.m */,
+				F47FD3822BCE7E35006579F2 /* FWDrawingConfigViewController.xib */,
+				F47FD3832BCE7E35006579F2 /* FWDrawingViewController.h */,
+				F47FD3842BCE7E35006579F2 /* FWDrawingViewController.m */,
+				F47FD3852BCE7E35006579F2 /* FWDrawingViewController.xib */,
 			);
-			path = StoreDataBridge;
+			path = Drawing;
+			sourceTree = "<group>";
+		};
+		F47FD3912BCE7EFA006579F2 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				F47FD38E2BCE7EFA006579F2 /* FWHomeViewController.h */,
+				F47FD38F2BCE7EFA006579F2 /* FWHomeViewController.m */,
+				F47FD3902BCE7EFA006579F2 /* FWHomeViewController.xib */,
+				F47FD38B2BCE7EFA006579F2 /* FWHomeTableViewCell.h */,
+				F47FD38C2BCE7EFA006579F2 /* FWHomeTableViewCell.m */,
+				F47FD38D2BCE7EFA006579F2 /* FWHomeTableViewCell.xib */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		F47FD3972BCE7F6C006579F2 /* ServeConfig */ = {
+			isa = PBXGroup;
+			children = (
+				F47FD3982BCE7FBC006579F2 /* FWServeConfigViewController.h */,
+				F47FD3992BCE7FBC006579F2 /* FWServeConfigViewController.m */,
+				F47FD39A2BCE7FBC006579F2 /* FWServeConfigViewController.xib */,
+			);
+			path = ServeConfig;
+			sourceTree = "<group>";
+		};
+		F47FD3A22BCE80F4006579F2 /* ScreenCasting */ = {
+			isa = PBXGroup;
+			children = (
+				F47FD39D2BCE80F4006579F2 /* FWScreenCastingViewController.h */,
+				F47FD39E2BCE80F4006579F2 /* FWScreenCastingViewController.m */,
+				F47FD39F2BCE80F4006579F2 /* FWScreenCastingViewController.xib */,
+				F47FD3A02BCE80F4006579F2 /* FWScreenCastingViewModel.h */,
+				F47FD3A12BCE80F4006579F2 /* FWScreenCastingViewModel.m */,
+			);
+			path = ScreenCasting;
+			sourceTree = "<group>";
+		};
+		F47FD3A82BCE8201006579F2 /* CastingBridge */ = {
+			isa = PBXGroup;
+			children = (
+				F47FD3A62BCE8201006579F2 /* FWCastingBridge.h */,
+				F47FD3A72BCE8201006579F2 /* FWCastingBridge.m */,
+			);
+			path = CastingBridge;
+			sourceTree = "<group>";
+		};
+		F47FD3AA2BCE99D2006579F2 /* Register */ = {
+			isa = PBXGroup;
+			children = (
+				F47FD3AB2BCE99E1006579F2 /* FWRegisterViewController.h */,
+				F47FD3AC2BCE99E1006579F2 /* FWRegisterViewController.m */,
+				F47FD3AD2BCE99E1006579F2 /* FWRegisterViewController.xib */,
+			);
+			path = Register;
 			sourceTree = "<group>";
 		};
 		F482EEF529B6CF1600815C9C /* NetworkBridge */ = {
@@ -616,14 +678,21 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F47FD3A42BCE80F4006579F2 /* FWScreenCastingViewController.xib in Resources */,
 				F40B634326C292DB00F42370 /* LaunchScreen.storyboard in Resources */,
 				F4219D2229AC88510069483A /* Login.xcassets in Resources */,
 				F40B633F26C2901F00F42370 /* VCSModuleExample-Info.plist in Resources */,
 				F45C830C27D6F50D008EEA31 /* Room.xcassets in Resources */,
+				F47FD38A2BCE7E35006579F2 /* FWDrawingViewController.xib in Resources */,
+				F47FD3882BCE7E35006579F2 /* FWDrawingConfigViewController.xib in Resources */,
 				F43CDA9326C69EEE00FBB94D /* Home.xcassets in Resources */,
 				F4DA7C8B27279E62003FDE9B /* Common.xcassets in Resources */,
+				F47FD37C2BCE6F28006579F2 /* FWLoginViewController.xib in Resources */,
+				F47FD39C2BCE7FBC006579F2 /* FWServeConfigViewController.xib in Resources */,
+				F47FD3932BCE7EFA006579F2 /* FWHomeTableViewCell.xib in Resources */,
+				F47FD3952BCE7EFA006579F2 /* FWHomeViewController.xib in Resources */,
 				F40B619D26C27D0C00F42370 /* AppIcon.xcassets in Resources */,
-				F43AD8552728EE8B0056B3EE /* FWLoginViewController.xib in Resources */,
+				F47FD3AF2BCE99E1006579F2 /* FWRegisterViewController.xib in Resources */,
 				F40B61A126C27D0C00F42370 /* Launch.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -773,28 +842,33 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F47FD37F2BCE7443006579F2 /* FWLoginModel.m in Sources */,
 				F4219D3829ADABAB0069483A /* UIScrollView+AutoHeight.m in Sources */,
 				F40B61CA26C27D0C00F42370 /* FWToastBridge.m in Sources */,
 				F4219D2C29AD988C0069483A /* CALayer+Extension.m in Sources */,
 				F40B633B26C27D0D00F42370 /* FWBaseViewController.m in Sources */,
 				F43AD83A2727EE670056B3EE /* FWConstants.m in Sources */,
-				F4219D2529ACB1C70069483A /* FWUserExtendModel.m in Sources */,
+				F47FD3942BCE7EFA006579F2 /* FWHomeViewController.m in Sources */,
 				F482EF2A29BEE2D900815C9C /* FWEnum.m in Sources */,
-				F43AD85C2728F1E70056B3EE /* FWLoginViewModel.m in Sources */,
-				F43AD8542728EE8B0056B3EE /* FWLoginViewController.m in Sources */,
 				F482EEFB29B6D15200815C9C /* FWNetworkBridge.m in Sources */,
-				F482EEFE29B6D2D100815C9C /* FWInterfaces.m in Sources */,
-				F47A3B5627D1F0FA00C88F2C /* FWStoreDataBridge.m in Sources */,
+				F47FD39B2BCE7FBC006579F2 /* FWServeConfigViewController.m in Sources */,
+				F47FD3872BCE7E35006579F2 /* FWDrawingConfigViewController.m in Sources */,
+				F47FD3A92BCE8201006579F2 /* FWCastingBridge.m in Sources */,
+				F47FD3A52BCE80F4006579F2 /* FWScreenCastingViewModel.m in Sources */,
 				F482EEF829B6D0F500815C9C /* FWBaseModel.m in Sources */,
 				F4C417C029B1A85900A7EBCB /* FWTimerBridge.m in Sources */,
 				F482EF3429C4187F00815C9C /* NSString+Extension.m in Sources */,
 				F4219D5529ADD78E0069483A /* UIView+Extension.m in Sources */,
+				F47FD37B2BCE6F28006579F2 /* FWLoginViewController.m in Sources */,
+				F47FD3892BCE7E35006579F2 /* FWDrawingViewController.m in Sources */,
 				F4219D5229ADD2530069483A /* FWDateBridge.m in Sources */,
-				F482EF0529B6E1CC00815C9C /* FWAuthToken.m in Sources */,
+				F47FD3A32BCE80F4006579F2 /* FWScreenCastingViewController.m in Sources */,
 				F40B633C26C27D0D00F42370 /* FWBaseNavigationViewController.m in Sources */,
+				F47FD3922BCE7EFA006579F2 /* FWHomeTableViewCell.m in Sources */,
 				F40B61A526C27D0C00F42370 /* FWAppDelegate.m in Sources */,
 				F482EF2E29BF286A00815C9C /* FWLogTraceBridge.m in Sources */,
 				F4219D3929ADABAB0069483A /* UITextView+AutoHeight.m in Sources */,
+				F47FD3AE2BCE99E1006579F2 /* FWRegisterViewController.m in Sources */,
 				F482EF0229B6DF9900815C9C /* FWToolBridge.m in Sources */,
 				F43AD8592728EF4D0056B3EE /* FWEntryBridge.m in Sources */,
 				F40B61A426C27D0C00F42370 /* main.m in Sources */,

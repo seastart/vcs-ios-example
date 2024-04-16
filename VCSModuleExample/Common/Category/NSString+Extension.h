@@ -24,6 +24,10 @@ NS_ASSUME_NONNULL_BEGIN
 /// 检测字符串是否为纯数字
 - (BOOL)deptNumInputShouldNumber;
 
+#pragma mark - 验证字符串是否IP地址
+/// 验证字符串是否IP地址
+- (BOOL)isValidateIP;
+
 @end
 
 NS_ASSUME_NONNULL_END

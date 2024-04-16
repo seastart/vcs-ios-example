@@ -10,33 +10,65 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-#pragma mark - 用户签名
-FOUNDATION_EXTERN NSString *__nonnull const RTCENGINEUSERSIG;
-#pragma mark - 服务地址
-FOUNDATION_EXTERN NSString *__nonnull const RTCENGINEURI;
-#pragma mark - 房间号码
-FOUNDATION_EXTERN NSString *__nonnull const RTCROOMNO;
-#pragma mark - 平台描述
-FOUNDATION_EXTERN NSString *__nonnull const RTCTERMINALDESC;
+/// 组件APPID
+FOUNDATION_EXTERN NSString *__nonnull const VCSSDKAPPID;
+/// 组件APPKEY
+FOUNDATION_EXTERN NSString *__nonnull const VCSSDKAPPKEY;
+/// 组件签名
+FOUNDATION_EXTERN NSString *__nonnull const VCSSDKSIGNATURE;
+/// 加密密钥
+FOUNDATION_EXTERN NSString *__nonnull const VCSKEYS;
 
-#pragma mark - 默认头像地址
-FOUNDATION_EXTERN NSString *__nonnull const FWDEFAULTAVATAR;
-#pragma mark - 存储服务器地址的KEY
-FOUNDATION_EXTERN NSString *__nonnull const FWSERVERURLKEY;
-#pragma mark - 存储USERSIG的KEY
-FOUNDATION_EXTERN NSString *__nonnull const FWUSERSIGKEY;
-#pragma mark - 存储用户昵称的KEY
-FOUNDATION_EXTERN NSString *__nonnull const FWNICKNAMEKEY;
-#pragma mark - 存储房间编号的KEY
-FOUNDATION_EXTERN NSString *__nonnull const FWROOMNOKEY;
-#pragma mark - 屏幕共享结束提示语的KEY
-FOUNDATION_EXTERN NSString *__nonnull const FWSCREENSHARINGENDKEY;
+/// 服务器地址存储键值
+FOUNDATION_EXTERN NSString *__nonnull const FWDATADEFAULTAPIKEY;
+/// 默认服务器
+FOUNDATION_EXTERN NSString *__nonnull const DATADEFAULTAPI;
+/// 服务器前缀
+FOUNDATION_EXTERN NSString *__nonnull const FWDATADAPIHEADER;
+/// 账号登录接口
+FOUNDATION_EXTERN NSString *__nonnull const FWUSERLOGININTERFACE;
+/// 账号注册接口
+FOUNDATION_EXTERN NSString *__nonnull const FWUSERREGISTERINTERFACE;
+/// 重置密码接口
+FOUNDATION_EXTERN NSString *__nonnull const FWUSERRESETINTERFACE;
+/// 获取验证码接口
+FOUNDATION_EXTERN NSString *__nonnull const FWUSERVCODEINTERFACE;
+/// 账号入会接口
+FOUNDATION_EXTERN NSString *__nonnull const FWUSERENTERROOMINTERFACE;
+/// 离开房间接口
+FOUNDATION_EXTERN NSString *__nonnull const FWUSEREXITROOMINTERFACE;
 
-#pragma mark - Bugly异常上报相关
-/// Bugly异常上报AppID
-FOUNDATION_EXTERN NSString *__nonnull const FWBUGLYAPPID;
-/// Bugly异常上报AppKey
-FOUNDATION_EXTERN NSString *__nonnull const FWBUGLYAPPKEY;
+#pragma mark - 服务器地址(风远)
+/// 线上环境(默认)
+FOUNDATION_EXTERN NSString *__nonnull const FWDEFAULTSERVICEURI;
+/// 预发布环境
+FOUNDATION_EXTERN NSString *__nonnull const FWUATSERVICEURI;
+/// 公网开发环境
+FOUNDATION_EXTERN NSString *__nonnull const FWDEVSERVICEURI;
+/// Anyconf环境
+FOUNDATION_EXTERN NSString *__nonnull const FWANYCONFSERVICEURI;
+/// 集成测试环境
+FOUNDATION_EXTERN NSString *__nonnull const FWQASERVICEURI;
+/// 压测环境
+FOUNDATION_EXTERN NSString *__nonnull const FWPETSERVICEURI;
+/// 开发环境1
+FOUNDATION_EXTERN NSString *__nonnull const FWLOCAL1SERVICEURI;
+
+#pragma mark - 服务器地址(萤石)
+/// 线上环境
+FOUNDATION_EXTERN NSString *__nonnull const FWDEFAULTSERVICEEZMURI;
+/// 测试环境
+FOUNDATION_EXTERN NSString *__nonnull const FWTESTSERVICEEZMURI;
+/// 演示环境
+FOUNDATION_EXTERN NSString *__nonnull const FWDEMOSERVICEEZMURI;
+/// 百人环境
+FOUNDATION_EXTERN NSString *__nonnull const FWOPTIMIZESERVICEEZMURI;
+/// 本地环境
+FOUNDATION_EXTERN NSString *__nonnull const FWLOCALSERVICEEZMURI;
+/// 开发环境
+FOUNDATION_EXTERN NSString *__nonnull const FWDEVSERVICEEZMURI;
+/// PB环境
+FOUNDATION_EXTERN NSString *__nonnull const FWPBSERVICEEZMURI;
 
 /// Application Group Identifier
 FOUNDATION_EXTERN NSString *__nonnull const FWAPPGROUP;

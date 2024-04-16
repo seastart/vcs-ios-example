@@ -24,6 +24,32 @@ typedef enum : NSUInteger {
     FWCertificateStateAppStore
 } FWCertificateState;
 
+#pragma mark - 企业成员角色类型
+/**
+ 企业成员角色类型
+
+- FWCompanyMemberRoleTypeNormal: 普通成员
+- FWCompanyMemberRoleTypeCreator: 创建者
+- FWCompanyMemberRoleTypeAdmin: 管理员
+*/
+typedef enum : NSUInteger {
+    FWCompanyMemberRoleTypeNormal = 0,
+    FWCompanyMemberRoleTypeCreator,
+    FWCompanyMemberRoleTypeAdmin
+} FWCompanyMemberRoleType;
+
+#pragma mark - 用户获取验证码类型
+/**
+用户获取验证码类型
+
+- FWUserCodeStateRegister: 注册
+- FWUserCodeStateResetCode: 重置密码
+*/
+typedef enum : NSUInteger {
+    FWUserCodeStateRegister = 1,
+    FWUserCodeStateResetCode
+} FWUserCodeState;
+
 @interface FWEnum : NSObject
 
 @end
