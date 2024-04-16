@@ -1,0 +1,37 @@
+//
+//  VCSModuleExample-Prefix.pch
+//  VCSModuleExample
+//
+//  Created by SailorGa on 2021/10/25.
+//
+
+#ifdef __OBJC__
+
+@import UIKit;
+@import Foundation;
+
+/// 键盘管理
+#import <IQKeyboardManager/IQKeyboardManager.h>
+/// 图片加载
+#import <SDWebImage/SDWebImage-umbrella.h>
+/// 动态响应链
+#import <ReactiveObjC/ReactiveObjC.h>
+/// 网络请求
+#import <AFNetworking/AFNetworking.h>
+/// 内存监测
+#import <MLeaksFinder/MLeaksFinder.h>
+/// 画板组件
+#import <VCSWhiteBoardKit/VCSWhiteBoardKit.h>
+/// 媒体组件
+#import <VCSMediaKit/VCSMediaKit.h>
+/// 会控组件
+#import <VCSMeetLink/VCSMeetLink.h>
+/// 数据模型
+#import <YYModel/YYModel.h>
+
+/// 程序入口
+#import "FWAppDelegate.h"
+/// 工程宏定义以及工具类
+#import "FWCommons.h"
+
+#endif
