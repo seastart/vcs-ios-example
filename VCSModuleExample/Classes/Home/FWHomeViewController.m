@@ -7,15 +7,30 @@
 //
 
 #import "FWHomeViewController.h"
-#import "FWHomeTableViewCell.h"
 #import "FWLoginModel.h"
 
 @interface FWHomeViewController ()
 
-/// 列表视图
-@property (weak, nonatomic) IBOutlet UITableView *tableView;
-/// 列表数据
-@property (nonatomic, copy) NSArray *listData;
+/// 房间号码
+@property (weak, nonatomic) IBOutlet UITextField *roomnoTextField;
+/// 参会昵称
+@property (weak, nonatomic) IBOutlet UITextField *nicknameTextField;
+/// 调试地址
+@property (weak, nonatomic) IBOutlet UITextField *debugTextField;
+
+/// 视频控制按钮
+@property (weak, nonatomic) IBOutlet UIButton *videoSwitchButton;
+/// 音频控制按钮
+@property (weak, nonatomic) IBOutlet UIButton *audioSwitchButton;
+
+/// 进入房间按钮
+@property (weak, nonatomic) IBOutlet UIButton *enterButton;
+/// 呼叫服务按钮
+@property (weak, nonatomic) IBOutlet UIButton *callButton;
+
+/// 当前IP地址
+@property (weak, nonatomic) IBOutlet UILabel *ipAddressLabel;
+
 /// 登录信息
 @property (nonatomic, strong) FWLoginModel *loginModel;
 
@@ -43,76 +58,51 @@
 - (void)buildView {
     
     /// 设置标题
-    self.navigationItem.title = @"首页模块";
+    self.navigationItem.title = @"首页";
     /// 获取登录信息
     self.loginModel = (FWLoginModel *)self.info;
-    /// 创建列表数据
-    self.listData = @[
-        @{@"type": @(0), @"title": @"呼叫组件"},
-        @{@"type": @(1), @"title": @"会控组件"}];
-    /// 注册列表单元
-    [self.tableView registerNib:[UINib nibWithNibName:@"FWHomeTableViewCell" bundle:nil] forCellReuseIdentifier:@"FWHomeTableViewCell"];
+    
+    /// 设置文本默认数据
+    self.roomnoTextField.text = @"919420744";
+    /// 设置默认参会昵称
+    self.nicknameTextField.text = self.loginModel.data.account.nickname;
+    /// 设置当前IP地址
+    self.ipAddressLabel.text = [NSString stringWithFormat:@"当前IP地址：%@",[FWIPAddressBridge currentIpAddress]];
+    
+    /// 绑定动态响应信号
+    [self bindSignal];
 }
 
-
-#pragma mark - ------ UITableView 的代理方法 ------
-#pragma mark 分组数
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+#pragma mark - 绑定信号
+/// 绑定信号
+- (void)bindSignal {
     
-    return 1;
-}
-
-#pragma mark 行数
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    @weakify(self);
     
-    return self.listData.count;
-}
-
-#pragma mark 每个单元格高度
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    /// 绑定视频控制按钮事件
+    [[self.videoSwitchButton rac_signalForControlEvents: UIControlEventTouchUpInside] subscribeNext:^(__kindof UIControl * _Nullable control) {
+        @strongify(self);
+        self.videoSwitchButton.selected = !self.videoSwitchButton.selected;
+    }];
     
-    return 50.0;
-}
-
-#pragma mark 创建列表单元格
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    /// 绑定音频控制按钮事件
+    [[self.audioSwitchButton rac_signalForControlEvents: UIControlEventTouchUpInside] subscribeNext:^(__kindof UIControl * _Nullable control) {
+        @strongify(self);
+        self.audioSwitchButton.selected = !self.audioSwitchButton.selected;
+    }];
     
-    static NSString *cellReuseIdentifier = @"FWHomeTableViewCell";
-    FWHomeTableViewCell *rCell = [tableView dequeueReusableCellWithIdentifier:cellReuseIdentifier];
-    if (!rCell) {
-        rCell = [[FWHomeTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellReuseIdentifier];
-    }
-    /// 获取单元格关联信息
-    NSDictionary *info = [self.listData objectAtIndex:indexPath.row];
-    /// 获取标题
-    NSString *title = [info objectForKey:@"title"];
-    /// 设置显示标题
-    [rCell.describeLabel setText:title];
-    /// 返回单元格
-    return rCell;
-}
-
-#pragma mark 单元格点击事件
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    /// 绑定进入房间按钮事件
+    [[self.enterButton rac_signalForControlEvents :UIControlEventTouchUpInside] subscribeNext:^(__kindof UIControl * _Nullable control) {
+        @strongify(self);
+        
+    }];
     
-    [tableView deselectRowAtIndexPath:indexPath animated:NO];
-    /// 获取单元格关联信息
-    NSDictionary *info = [self.listData objectAtIndex:indexPath.row];
-    /// 获取类型
-    NSInteger type = [[info objectForKey:@"type"] integerValue];
-    /// 根据类型进入不同组件页面
-    switch (type) {
-        case 0:
-            /// 跳转呼叫组件视图
-            [self push:@"FWMeetingCallViewController" info:self.loginModel block:nil];
-            break;
-        case 1:
-            /// 跳转会控组件视图
-            [self push:@"FWMeetingControlViewController" info:self.loginModel block:nil];
-            break;
-        default:
-            break;
-    }
+    /// 绑定呼叫服务按钮事件
+    [[self.callButton rac_signalForControlEvents :UIControlEventTouchUpInside] subscribeNext:^(__kindof UIControl * _Nullable control) {
+        @strongify(self);
+        /// 跳转呼叫组件视图
+        [self push:@"FWRoomCallViewController" info:self.loginModel block:nil];
+    }];
 }
 
 #pragma mark - 资源释放

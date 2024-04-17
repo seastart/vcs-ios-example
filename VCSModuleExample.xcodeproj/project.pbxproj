@@ -10,7 +10,6 @@
 		4CA16C8060A4C85C3C988A2C /* Pods_VCSReplayBroadcastUpload.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C534E2CB31713F30517F227 /* Pods_VCSReplayBroadcastUpload.framework */; };
 		EC3A4E40AFD4135E2E45497A /* Pods_VCSModuleExample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FD5CBDBFBF598E597859C3D /* Pods_VCSModuleExample.framework */; };
 		F40B619D26C27D0C00F42370 /* AppIcon.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F40B5D2A26C27D0A00F42370 /* AppIcon.xcassets */; };
-		F40B61A126C27D0C00F42370 /* Launch.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F40B5D2E26C27D0A00F42370 /* Launch.xcassets */; };
 		F40B61A426C27D0C00F42370 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F40B5D3426C27D0A00F42370 /* main.m */; };
 		F40B61A526C27D0C00F42370 /* FWAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F40B5D3726C27D0A00F42370 /* FWAppDelegate.m */; };
 		F40B61CA26C27D0C00F42370 /* FWToastBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = F40B5DA026C27D0B00F42370 /* FWToastBridge.m */; };
@@ -35,8 +34,6 @@
 		F47FD3882BCE7E35006579F2 /* FWDrawingConfigViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F47FD3822BCE7E35006579F2 /* FWDrawingConfigViewController.xib */; };
 		F47FD3892BCE7E35006579F2 /* FWDrawingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F47FD3842BCE7E35006579F2 /* FWDrawingViewController.m */; };
 		F47FD38A2BCE7E35006579F2 /* FWDrawingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F47FD3852BCE7E35006579F2 /* FWDrawingViewController.xib */; };
-		F47FD3922BCE7EFA006579F2 /* FWHomeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F47FD38C2BCE7EFA006579F2 /* FWHomeTableViewCell.m */; };
-		F47FD3932BCE7EFA006579F2 /* FWHomeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F47FD38D2BCE7EFA006579F2 /* FWHomeTableViewCell.xib */; };
 		F47FD3942BCE7EFA006579F2 /* FWHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F47FD38F2BCE7EFA006579F2 /* FWHomeViewController.m */; };
 		F47FD3952BCE7EFA006579F2 /* FWHomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F47FD3902BCE7EFA006579F2 /* FWHomeViewController.xib */; };
 		F47FD39B2BCE7FBC006579F2 /* FWServeConfigViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F47FD3992BCE7FBC006579F2 /* FWServeConfigViewController.m */; };
@@ -60,6 +57,10 @@
 		F47FD3CF2BCF6284006579F2 /* FWSpeedTestTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F47FD3C02BCF6284006579F2 /* FWSpeedTestTableViewCell.xib */; };
 		F47FD3D02BCF6284006579F2 /* FWSpeedTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F47FD3C22BCF6284006579F2 /* FWSpeedTestViewController.m */; };
 		F47FD3D12BCF6284006579F2 /* FWSpeedTestViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F47FD3C32BCF6284006579F2 /* FWSpeedTestViewController.xib */; };
+		F47FD3D72BCF79E2006579F2 /* FWRoomCallViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F47FD3D42BCF79E2006579F2 /* FWRoomCallViewController.m */; };
+		F47FD3D82BCF79E2006579F2 /* FWRoomCallViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F47FD3D52BCF79E2006579F2 /* FWRoomCallViewController.xib */; };
+		F47FD3DC2BCF8AAA006579F2 /* FWIPAddressBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = F47FD3DB2BCF8AAA006579F2 /* FWIPAddressBridge.m */; };
+		F47FD3DF2BCF8AB7006579F2 /* FWIPAddressConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = F47FD3DE2BCF8AB7006579F2 /* FWIPAddressConfig.m */; };
 		F482EEF829B6D0F500815C9C /* FWBaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F482EEF729B6D0F500815C9C /* FWBaseModel.m */; };
 		F482EEFB29B6D15200815C9C /* FWNetworkBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = F482EEFA29B6D15200815C9C /* FWNetworkBridge.m */; };
 		F482EF0229B6DF9900815C9C /* FWToolBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = F482EF0129B6DF9900815C9C /* FWToolBridge.m */; };
@@ -136,7 +137,6 @@
 		EB43ABE36BE8C041191AD5AE /* Pods-RTCEngineExample.adhoc.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RTCEngineExample.adhoc.xcconfig"; path = "Target Support Files/Pods-RTCEngineExample/Pods-RTCEngineExample.adhoc.xcconfig"; sourceTree = "<group>"; };
 		F40B5CEA26C27A6C00F42370 /* VCSModuleExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VCSModuleExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F40B5D2A26C27D0A00F42370 /* AppIcon.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = AppIcon.xcassets; sourceTree = "<group>"; };
-		F40B5D2E26C27D0A00F42370 /* Launch.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Launch.xcassets; sourceTree = "<group>"; };
 		F40B5D3426C27D0A00F42370 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		F40B5D3626C27D0A00F42370 /* FWAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FWAppDelegate.h; sourceTree = "<group>"; };
 		F40B5D3726C27D0A00F42370 /* FWAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FWAppDelegate.m; sourceTree = "<group>"; };
@@ -181,9 +181,6 @@
 		F47FD3832BCE7E35006579F2 /* FWDrawingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FWDrawingViewController.h; sourceTree = "<group>"; };
 		F47FD3842BCE7E35006579F2 /* FWDrawingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FWDrawingViewController.m; sourceTree = "<group>"; };
 		F47FD3852BCE7E35006579F2 /* FWDrawingViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FWDrawingViewController.xib; sourceTree = "<group>"; };
-		F47FD38B2BCE7EFA006579F2 /* FWHomeTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FWHomeTableViewCell.h; sourceTree = "<group>"; };
-		F47FD38C2BCE7EFA006579F2 /* FWHomeTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FWHomeTableViewCell.m; sourceTree = "<group>"; };
-		F47FD38D2BCE7EFA006579F2 /* FWHomeTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FWHomeTableViewCell.xib; sourceTree = "<group>"; };
 		F47FD38E2BCE7EFA006579F2 /* FWHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FWHomeViewController.h; sourceTree = "<group>"; };
 		F47FD38F2BCE7EFA006579F2 /* FWHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FWHomeViewController.m; sourceTree = "<group>"; };
 		F47FD3902BCE7EFA006579F2 /* FWHomeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FWHomeViewController.xib; sourceTree = "<group>"; };
@@ -220,6 +217,13 @@
 		F47FD3C12BCF6284006579F2 /* FWSpeedTestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FWSpeedTestViewController.h; sourceTree = "<group>"; };
 		F47FD3C22BCF6284006579F2 /* FWSpeedTestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FWSpeedTestViewController.m; sourceTree = "<group>"; };
 		F47FD3C32BCF6284006579F2 /* FWSpeedTestViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FWSpeedTestViewController.xib; sourceTree = "<group>"; };
+		F47FD3D32BCF79E2006579F2 /* FWRoomCallViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FWRoomCallViewController.h; sourceTree = "<group>"; };
+		F47FD3D42BCF79E2006579F2 /* FWRoomCallViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FWRoomCallViewController.m; sourceTree = "<group>"; };
+		F47FD3D52BCF79E2006579F2 /* FWRoomCallViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FWRoomCallViewController.xib; sourceTree = "<group>"; };
+		F47FD3DA2BCF8AAA006579F2 /* FWIPAddressBridge.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FWIPAddressBridge.h; sourceTree = "<group>"; };
+		F47FD3DB2BCF8AAA006579F2 /* FWIPAddressBridge.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FWIPAddressBridge.m; sourceTree = "<group>"; };
+		F47FD3DD2BCF8AB7006579F2 /* FWIPAddressConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FWIPAddressConfig.h; sourceTree = "<group>"; };
+		F47FD3DE2BCF8AB7006579F2 /* FWIPAddressConfig.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FWIPAddressConfig.m; sourceTree = "<group>"; };
 		F482EEF629B6D0F500815C9C /* FWBaseModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FWBaseModel.h; sourceTree = "<group>"; };
 		F482EEF729B6D0F500815C9C /* FWBaseModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FWBaseModel.m; sourceTree = "<group>"; };
 		F482EEF929B6D15200815C9C /* FWNetworkBridge.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FWNetworkBridge.h; sourceTree = "<group>"; };
@@ -339,7 +343,6 @@
 			isa = PBXGroup;
 			children = (
 				F40B5D2A26C27D0A00F42370 /* AppIcon.xcassets */,
-				F40B5D2E26C27D0A00F42370 /* Launch.xcassets */,
 				F4219D2129AC88510069483A /* Login.xcassets */,
 				F43CDA9226C69EEE00FBB94D /* Home.xcassets */,
 				F4DA7C8A27279E62003FDE9B /* Common.xcassets */,
@@ -389,6 +392,7 @@
 		F40B5D5326C27D0A00F42370 /* Helper */ = {
 			isa = PBXGroup;
 			children = (
+				F47FD3D92BCF8A96006579F2 /* IPAddressBridge */,
 				F47FD3A82BCE8201006579F2 /* CastingBridge */,
 				F482EF2B29BF285600815C9C /* LogTraceBridge */,
 				F482EEFF29B6DF8E00815C9C /* ToolBridge */,
@@ -421,6 +425,7 @@
 				F47FD3C42BCF6284006579F2 /* SpeedTest */,
 				F47FD3862BCE7E35006579F2 /* Drawing */,
 				F47FD3912BCE7EFA006579F2 /* Home */,
+				F47FD3D62BCF79E2006579F2 /* RoomCall */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -521,9 +526,6 @@
 				F47FD38E2BCE7EFA006579F2 /* FWHomeViewController.h */,
 				F47FD38F2BCE7EFA006579F2 /* FWHomeViewController.m */,
 				F47FD3902BCE7EFA006579F2 /* FWHomeViewController.xib */,
-				F47FD38B2BCE7EFA006579F2 /* FWHomeTableViewCell.h */,
-				F47FD38C2BCE7EFA006579F2 /* FWHomeTableViewCell.m */,
-				F47FD38D2BCE7EFA006579F2 /* FWHomeTableViewCell.xib */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -594,6 +596,27 @@
 				F47FD3B72BCF6284006579F2 /* FWSpeedTestRippleView.m */,
 			);
 			path = SpeedTest;
+			sourceTree = "<group>";
+		};
+		F47FD3D62BCF79E2006579F2 /* RoomCall */ = {
+			isa = PBXGroup;
+			children = (
+				F47FD3D32BCF79E2006579F2 /* FWRoomCallViewController.h */,
+				F47FD3D42BCF79E2006579F2 /* FWRoomCallViewController.m */,
+				F47FD3D52BCF79E2006579F2 /* FWRoomCallViewController.xib */,
+			);
+			path = RoomCall;
+			sourceTree = "<group>";
+		};
+		F47FD3D92BCF8A96006579F2 /* IPAddressBridge */ = {
+			isa = PBXGroup;
+			children = (
+				F47FD3DA2BCF8AAA006579F2 /* FWIPAddressBridge.h */,
+				F47FD3DB2BCF8AAA006579F2 /* FWIPAddressBridge.m */,
+				F47FD3DD2BCF8AB7006579F2 /* FWIPAddressConfig.h */,
+				F47FD3DE2BCF8AB7006579F2 /* FWIPAddressConfig.m */,
+			);
+			path = IPAddressBridge;
 			sourceTree = "<group>";
 		};
 		F482EEF529B6CF1600815C9C /* NetworkBridge */ = {
@@ -744,6 +767,7 @@
 				F4219D2229AC88510069483A /* Login.xcassets in Resources */,
 				F40B633F26C2901F00F42370 /* VCSModuleExample-Info.plist in Resources */,
 				F45C830C27D6F50D008EEA31 /* Room.xcassets in Resources */,
+				F47FD3D82BCF79E2006579F2 /* FWRoomCallViewController.xib in Resources */,
 				F47FD38A2BCE7E35006579F2 /* FWDrawingViewController.xib in Resources */,
 				F47FD3882BCE7E35006579F2 /* FWDrawingConfigViewController.xib in Resources */,
 				F43CDA9326C69EEE00FBB94D /* Home.xcassets in Resources */,
@@ -754,12 +778,10 @@
 				F47FD39C2BCE7FBC006579F2 /* FWServeConfigViewController.xib in Resources */,
 				F47FD3D12BCF6284006579F2 /* FWSpeedTestViewController.xib in Resources */,
 				F47FD3C62BCF6284006579F2 /* FWSpeedTestResultHeaderTableViewCell.xib in Resources */,
-				F47FD3932BCE7EFA006579F2 /* FWHomeTableViewCell.xib in Resources */,
 				F47FD3952BCE7EFA006579F2 /* FWHomeViewController.xib in Resources */,
 				F40B619D26C27D0C00F42370 /* AppIcon.xcassets in Resources */,
 				F47FD3CD2BCF6284006579F2 /* FWSpeedTestSpeedTableViewCell.xib in Resources */,
 				F47FD3AF2BCE99E1006579F2 /* FWRegisterViewController.xib in Resources */,
-				F40B61A126C27D0C00F42370 /* Launch.xcassets in Resources */,
 				F47FD3C82BCF6284006579F2 /* FWSpeedTestResultTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -928,9 +950,11 @@
 				F4C417C029B1A85900A7EBCB /* FWTimerBridge.m in Sources */,
 				F482EF3429C4187F00815C9C /* NSString+Extension.m in Sources */,
 				F4219D5529ADD78E0069483A /* UIView+Extension.m in Sources */,
+				F47FD3DC2BCF8AAA006579F2 /* FWIPAddressBridge.m in Sources */,
 				F47FD37B2BCE6F28006579F2 /* FWLoginViewController.m in Sources */,
 				F47FD3892BCE7E35006579F2 /* FWDrawingViewController.m in Sources */,
 				F47FD3CA2BCF6284006579F2 /* FWSpeedTestSpeedCollectionViewCell.m in Sources */,
+				F47FD3D72BCF79E2006579F2 /* FWRoomCallViewController.m in Sources */,
 				F4219D5229ADD2530069483A /* FWDateBridge.m in Sources */,
 				F47FD3CC2BCF6284006579F2 /* FWSpeedTestSpeedTableViewCell.m in Sources */,
 				F47FD3A32BCE80F4006579F2 /* FWScreenCastingViewController.m in Sources */,
@@ -938,10 +962,10 @@
 				F47FD3CE2BCF6284006579F2 /* FWSpeedTestTableViewCell.m in Sources */,
 				F40B633C26C27D0D00F42370 /* FWBaseNavigationViewController.m in Sources */,
 				F47FD3D02BCF6284006579F2 /* FWSpeedTestViewController.m in Sources */,
-				F47FD3922BCE7EFA006579F2 /* FWHomeTableViewCell.m in Sources */,
 				F40B61A526C27D0C00F42370 /* FWAppDelegate.m in Sources */,
 				F482EF2E29BF286A00815C9C /* FWLogTraceBridge.m in Sources */,
 				F4219D3929ADABAB0069483A /* UITextView+AutoHeight.m in Sources */,
+				F47FD3DF2BCF8AB7006579F2 /* FWIPAddressConfig.m in Sources */,
 				F47FD3AE2BCE99E1006579F2 /* FWRegisterViewController.m in Sources */,
 				F482EF0229B6DF9900815C9C /* FWToolBridge.m in Sources */,
 				F43AD8592728EF4D0056B3EE /* FWEntryBridge.m in Sources */,

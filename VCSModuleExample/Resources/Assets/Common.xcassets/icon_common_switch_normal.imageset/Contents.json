@@ -1,16 +1,17 @@
 {
   "images" : [
     {
+      "filename" : "icon_common_switch_normal.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "icon_common_empty_data@2x.png",
+      "filename" : "icon_common_switch_normal@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "icon_common_empty_data@3x.png",
+      "filename" : "icon_common_switch_normal@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

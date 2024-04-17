@@ -20,6 +20,7 @@
 #import "FWNetworkBridge.h"
 #import "FWCastingBridge.h"
 #import "FWLogTraceBridge.h"
+#import "FWIPAddressBridge.h"
 
 #import "UIView+Extension.h"
 #import "CALayer+Extension.h"
