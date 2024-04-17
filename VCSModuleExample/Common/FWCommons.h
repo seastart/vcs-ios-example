@@ -22,6 +22,8 @@
 #import "FWLogTraceBridge.h"
 #import "FWIPAddressBridge.h"
 
+#import "FWRemoteSession.h"
+
 #import "UIView+Extension.h"
 #import "CALayer+Extension.h"
 #import "NSString+Extension.h"

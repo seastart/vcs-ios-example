@@ -24,10 +24,18 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface FWMeetingRoomMemberWindow : UIView
 
+/// 初始化视图
+- (instancetype)init:(BOOL)isSelf;
+
+#pragma mark - 初始化视图
+- (instancetype)initWithFrame:(CGRect)frame isSelf:(BOOL)isSelf;
+
 /// 回调代理
 @property (nonatomic, weak) id <FWMeetingRoomMemberWindowDelegate> delegate;
 /// 窗口关联成员信息
 @property (nonatomic, strong, nullable) Account *account;
+/// 订阅流类型
+@property (nonatomic, assign) FWStreamType streamType;
 
 @end
 

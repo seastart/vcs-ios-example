@@ -10,12 +10,37 @@
 #import "FWMeetingRoomMemberView.h"
 #import "FWMeetingRoomModel.h"
 
-@interface FWMeetingRoomViewController () <VCSMeetControlDelegate, FWMeetingRoomMemberViewDelegate>
+@interface FWMeetingRoomViewController () <VCSVideoCaptureDelegate, VCSStreamMediaDelegate, VCSScreenRecordServerDelegate, VCSMeetControlDelegate, FWMeetingRoomMemberViewDelegate>
 
 /// 挂断按钮
 @property (weak, nonatomic) IBOutlet UIButton *hangupButton;
+/// 扬声器按钮
+@property (weak, nonatomic) IBOutlet UIButton *speakerButton;
+/// 摄像头按钮
+@property (weak, nonatomic) IBOutlet UIButton *cameraButton;
+/// 房间号码
+@property (weak, nonatomic) IBOutlet UILabel *roomnoLabel;
 /// 成员列表视图
 @property (weak, nonatomic) IBOutlet FWMeetingRoomMemberView *roomMemberView;
+/// 音频控制按钮
+@property (weak, nonatomic) IBOutlet UIButton *audioButton;
+/// 音频控制按钮图标
+@property (weak, nonatomic) IBOutlet UIButton *audioButtonImage;
+/// 音频控制按钮标题
+@property (weak, nonatomic) IBOutlet UILabel *audioButtonLable;
+/// 视频控制按钮
+@property (weak, nonatomic) IBOutlet UIButton *videoButton;
+/// 视频控制按钮图标
+@property (weak, nonatomic) IBOutlet UIButton *videoButtonImage;
+/// 视频控制按钮标题
+@property (weak, nonatomic) IBOutlet UILabel *videoButtonLable;
+/// 共享按钮
+@property (weak, nonatomic) IBOutlet UIButton *sharingButton;
+/// 共享按钮图标
+@property (weak, nonatomic) IBOutlet UIButton *sharingButtonImage;
+/// 共享按钮标题
+@property (weak, nonatomic) IBOutlet UILabel *sharingButtonLable;
+
 
 /// 主码流信息
 @property (nonatomic, strong) Stream *streamMain;
@@ -23,6 +48,9 @@
 @property (nonatomic, strong) Stream *streamSub;
 /// 房间信息
 @property (nonatomic, strong) FWMeetingRoomModel *roomModel;
+
+/// 屏幕录制组件
+@property (nonatomic, strong) RPSystemBroadcastPickerView *broadcastPickerView;
 
 @end
 
@@ -68,10 +96,25 @@
     return _streamSub;
 }
 
+#pragma mark - 创建屏幕录制组件
+/// 创建屏幕录制组件
+- (RPSystemBroadcastPickerView *)broadcastPickerView API_AVAILABLE(ios(12.0)) {
+    
+    if (!_broadcastPickerView) {
+        _broadcastPickerView = [[RPSystemBroadcastPickerView alloc] init];
+        _broadcastPickerView.preferredExtension = @"cn.seastart.vcsmodule.replayBroadcastUpload";
+        _broadcastPickerView.showsMicrophoneButton = NO;
+        _broadcastPickerView.hidden = YES;
+    }
+    return _broadcastPickerView;
+}
+
 #pragma mark - 页面出现前
 - (void)viewWillAppear:(BOOL)animated {
     
     [super viewWillAppear:animated];
+    /// 限制锁屏
+    [[UIApplication sharedApplication] setIdleTimerDisabled:YES];
     /// 更改状态栏颜色为白色
     [self statusBarAppearanceUpdateWithHiden:NO barStyle:UIStatusBarStyleLightContent];
     /// 显示顶部导航栏
@@ -101,8 +144,8 @@
     
     /// 绑定动态响应信号
     [self bindSignal];
-    /// 进入房间
-    [self enterRoom:self.info];
+    /// 初始化会控组件
+    [self initializeMeetControl:self.info];
 }
 
 #pragma mark - 绑定信号
@@ -116,13 +159,104 @@
         /// 挂断事件处理
         [self onHangupEvent];
     }];
+    
+    /// 绑定扬声器按钮事件
+    [[self.speakerButton rac_signalForControlEvents: UIControlEventTouchUpInside] subscribeNext:^(__kindof UIControl * _Nullable control) {
+        @strongify(self);
+        /// 摄像头按钮事件
+        [self handleSelectSpeakerButton:control];
+    }];
+    
+    /// 绑定摄像头按钮事件
+    [[self.cameraButton rac_signalForControlEvents: UIControlEventTouchUpInside] subscribeNext:^(__kindof UIControl * _Nullable control) {
+        @strongify(self);
+        /// 扬声器按钮事件
+        [self handleSelectCameraButton:control];
+    }];
+    
+    /// 监听订阅音频控制按钮选择状态
+    [RACObserve(self.audioButton, selected) subscribeNext:^(NSNumber * _Nullable value) {
+        @strongify(self);
+        if (value.boolValue) {
+            /// 音频按钮选中
+            [self.audioButtonImage setImage:kGetImage(@"icon_room_audio_un") forState:UIControlStateNormal];
+            [self.audioButtonLable setText:@"解除静音"];
+        } else {
+            /// 音频按钮未选中
+            [self.audioButtonImage setImage:kGetImage(@"icon_room_audio") forState:UIControlStateNormal];
+            [self.audioButtonLable setText:@"静音"];
+        }
+    }];
+    
+    /// 监听订阅视频控制按钮选择状态
+    [RACObserve(self.videoButton, selected) subscribeNext:^(NSNumber * _Nullable value) {
+        @strongify(self);
+        if (value.boolValue) {
+            /// 视频按钮选中
+            [self.videoButtonImage setImage:kGetImage(@"icon_room_video_un") forState:UIControlStateNormal];
+            [self.videoButtonLable setText:NSLocalizedString(@"开启视频", nil)];
+        } else {
+            /// 视频按钮未选中
+            [self.videoButtonImage setImage:kGetImage(@"icon_room_video") forState:UIControlStateNormal];
+            [self.videoButtonLable setText:NSLocalizedString(@"关闭视频", nil)];
+        }
+    }];
+    
+    /// 监听订阅共享按钮选择状态
+    [RACObserve(self.sharingButton, selected) subscribeNext:^(NSNumber * _Nullable value) {
+        @strongify(self);
+        if (value.boolValue) {
+            /// 共享按钮选中
+            [self.sharingButtonImage setImage:kGetImage(@"icon_room_share_un") forState:UIControlStateNormal];
+            [self.sharingButtonLable setText:NSLocalizedString(@"停止共享", nil)];
+        } else {
+            /// 共享按钮未选中
+            [self.sharingButtonImage setImage:kGetImage(@"icon_room_share") forState:UIControlStateNormal];
+            [self.sharingButtonLable setText:NSLocalizedString(@"共享屏幕", nil)];
+        }
+    }];
+    
+    /// 绑定音频控制按钮事件
+    [[self.audioButton rac_signalForControlEvents: UIControlEventTouchUpInside] subscribeNext:^(__kindof UIControl * _Nullable control) {
+        @strongify(self);
+        /// 音频发送按钮事件
+        [self handleSelectAudioButton:control];
+    }];
+    
+    /// 绑定视频控制按钮事件
+    [[self.videoButton rac_signalForControlEvents: UIControlEventTouchUpInside] subscribeNext:^(__kindof UIControl * _Nullable control) {
+        @strongify(self);
+        /// 视频发送按钮事件
+        [self handleSelectVideoButton:control];
+    }];
+    
+    /// 绑定共享按钮事件
+    [[self.sharingButton rac_signalForControlEvents: UIControlEventTouchUpInside] subscribeNext:^(__kindof UIControl * _Nullable control) {
+        @strongify(self);
+        /// 共享按钮事件
+        [self handleSelectSharingButton:control];
+    }];
 }
 
-#pragma mark - 进入房间
-/// 进入房间
-/// - Parameter roomModel: 房间信息
-- (void)enterRoom:(FWMeetingRoomModel *)roomModel {
+#pragma mark - 显示屏幕采集选择器视图
+/// 显示屏幕采集选择器视图
+- (void)showBroadcastPicker {
     
+    /// 将事件传递给开启录制按钮
+    for (UIView *view in self.broadcastPickerView.subviews) {
+        if ([view isKindOfClass:[UIButton class]]) {
+            [(UIButton *)view sendActionsForControlEvents:UIControlEventTouchDown | UIControlEventTouchUpInside];
+        }
+    }
+}
+
+#pragma mark - 初始化会控组件
+/// 初始化会控组件
+/// - Parameter roomModel: 房间信息
+- (void)initializeMeetControl:(FWMeetingRoomModel *)roomModel {
+    
+    /// 设置房间号码
+    [self.roomnoLabel setText:roomModel.data.room.no];
     /// 保存房间信息
     self.roomModel = roomModel;
     /// 创建会控参数
@@ -136,13 +270,50 @@
     controlParam.mobile = roomModel.loginModel.data.account.mobile;
     controlParam.nickname = roomModel.loginModel.data.account.nickname;
     controlParam.portrait = roomModel.loginModel.data.account.portrait;
-    controlParam.audioState = DeviceState_DsClosed;
-    controlParam.videoState = DeviceState_DsClosed;
+    controlParam.audioState = self.roomModel.controlModel.audioState ? DeviceState_DsActive : DeviceState_DsClosed;
+    controlParam.videoState = self.roomModel.controlModel.videoState ? DeviceState_DsActive : DeviceState_DsClosed;;
     controlParam.streamMain = self.streamMain;
     controlParam.streamSub = self.streamSub;
     controlParam.serverId = roomModel.data.meeting_server_id;
     /// 初始化会控组件
     [[VCSMeetControl sharedInstance] initializeWithControlParam:controlParam delegate:self];
+    /// 初始化流媒体
+    [self initializeStreamMedia];
+}
+
+#pragma mark - 初始化流媒体
+/// 初始化流媒体
+- (void)initializeStreamMedia {
+    
+    /// 开启屏幕录制并设置回调代理
+    [[VCSScreenRecordServer sharedInstance] startScreenRecordWithAppGroup:FWAPPGROUP isCasting:NO encoderWidth:720 encoderHeight:1280 framerate:15 delegate:self];
+    
+    /// 设置采集回调代理
+    [VCSVideoCapture sharedInstance].delegate = self;
+    
+    /// 创建流媒体配置
+    VCSMediaConfig *mediaConfig = [[VCSMediaConfig alloc] init];
+    mediaConfig.streamHost = self.roomModel.data.stream_host;
+    mediaConfig.streamPort = (int)self.roomModel.data.stream_port;
+    mediaConfig.roomSdkNo = [self.roomModel.data.room.sdk_no intValue];
+    mediaConfig.streamId = [self.roomModel.loginModel.data.account.room.sdk_no intValue];
+    mediaConfig.sessionKey = self.roomModel.data.session;
+    
+    /// 创建调试参数
+    VCSDebugParam *debugParam = [VCSDebugParam defaultConfig];
+    if (!kStringIsEmpty(self.roomModel.controlModel.debugText)) {
+        /// 设置调试地址
+        debugParam.debugHost = self.roomModel.controlModel.debugText;
+    }
+    /// 设置调试参数
+    [[VCSStreamMedia sharedInstance] setRemoteDebugParam:debugParam];
+    /// 初始化流媒体
+    [[VCSStreamMedia sharedInstance] initializeWithMediaConfig:mediaConfig delegate:self];
+    
+    /// 设置音频按钮选中状态
+    [self setupAudioButtonSelected:!self.roomModel.controlModel.audioState];
+    /// 设置视频按钮选中状态
+    [self setupVideoButtonSelected:!self.roomModel.controlModel.videoState];
 }
 
 #pragma mark - 挂断事件处理
@@ -169,7 +340,6 @@
 - (void)leaveRoom {
     
     @weakify(self);
-    
     /// 显示加载
     [FWToastBridge showToastAction];
     /// 构建请求参数
@@ -179,14 +349,134 @@
     [[FWNetworkBridge sharedManager] POST:FWUSEREXITROOMINTERFACE params:params className:@"FWBaseModel" result:^(BOOL isSuccess, id _Nullable result, NSString * _Nullable errorMsg) {
         /// 销毁会控组件资源
         [[VCSMeetControl sharedInstance] destroy:^{
-            @strongify(self);
-            /// 隐藏加载
-            [FWToastBridge hiddenToastAction];
-            /// 离开房间视图
-            [self.navigationController popViewControllerAnimated:self];
+            /// 销毁媒体组件资源
+            [[VCSStreamMedia sharedInstance] destroy:^{
+                /// 销毁屏幕录制资源
+                [[VCSScreenRecordServer sharedInstance] destroy];
+                /// 清空缓存数据
+                [[FWRemoteSession sharedInstance] cleanData];
+                /// 销毁采集资源
+                [[VCSVideoCapture sharedInstance] destroy];
+                /// 声明弱引用
+                @strongify(self);
+                /// 隐藏加载
+                [FWToastBridge hiddenToastAction];
+                /// 离开房间视图
+                [self pop:1];
+            }];
         }];
     }];
 }
+
+#pragma mark - 摄像头按钮事件
+/// 扬声器按钮事件
+/// - Parameter source: 事件源
+- (void)handleSelectSpeakerButton:(UIButton *)source {
+    
+    /// 切换摄像头
+    [[VCSVideoCapture sharedInstance] switchCamera];
+}
+
+#pragma mark - 扬声器按钮事件
+/// 摄像头按钮事件
+/// - Parameter source: 事件源
+- (void)handleSelectCameraButton:(UIButton *)source {
+    
+    /// 切换源按钮选中状态
+    source.selected = !source.selected;
+    /// 设置扬声器状态
+    [[VCSStreamMedia sharedInstance] enabledAudioSpeaker:!source.selected];
+}
+
+#pragma mark - 音频发送按钮事件
+/// 音频发送按钮事件
+/// - Parameter source: 事件源
+- (void)handleSelectAudioButton:(UIButton *)source {
+    
+    @weakify(self);
+    /// 检测麦克风权限
+    [FWToolBridge requestAuthorization:FWPermissionsStateAudio superVC:[FWEntryBridge sharedManager].appDelegate.window.rootViewController result:^(BOOL status) {
+        if (status) {
+            /// 声明弱引用
+            @strongify(self);
+            /// 切换源按钮选中状态
+            source.selected = !source.selected;
+            /// 获取音频发送状态
+            BOOL audioState = !source.selected;
+            /// 设置音频状态
+            [[VCSMeetControl sharedInstance] enableSendAudio:audioState ? DeviceState_DsActive : DeviceState_DsClosed];
+            /// 设置音频发送状态
+            [[VCSStreamMedia sharedInstance] enabledSendAudio:audioState];
+            /// 更新自己的状态信息
+            [self.roomMemberView memberUpdateWithAccount:[VCSMeetControl sharedInstance].account isSelf:YES];
+        }
+    }];
+}
+
+#pragma mark - 视频发送按钮事件
+/// 视频发送按钮事件
+/// - Parameter source: 事件源
+- (void)handleSelectVideoButton:(UIButton *)source {
+    
+    @weakify(self);
+    /// 检测摄像头权限
+    [FWToolBridge requestAuthorization:FWPermissionsStateVideo superVC:[FWEntryBridge sharedManager].appDelegate.window.rootViewController result:^(BOOL status) {
+        if (status) {
+            /// 声明弱引用
+            @strongify(self);
+            /// 切换源按钮选中状态
+            source.selected = !source.selected;
+            /// 获取视频发送状态
+            BOOL videoState = !source.selected;
+            /// 设置视频状态
+            [[VCSMeetControl sharedInstance] enableSendVideo:videoState ? DeviceState_DsActive : DeviceState_DsClosed];
+            /// 设置视频发送状态
+            [[VCSStreamMedia sharedInstance] enabledPublish:videoState];
+            /// 更新自己的状态信息
+            [self.roomMemberView memberUpdateWithAccount:[VCSMeetControl sharedInstance].account isSelf:YES];
+        }
+    }];
+}
+
+#pragma mark - 共享按钮事件
+/// 共享按钮事件
+/// - Parameter source: 事件源
+- (void)handleSelectSharingButton:(UIButton *)source {
+    
+    /// 显示选择器视图
+    [self showBroadcastPicker];
+}
+
+#pragma mark - 设置音频按钮选中状态
+/// 设置音频按钮选中状态
+/// @param selected 选中状态
+- (void)setupAudioButtonSelected:(BOOL)selected {
+    
+    FWDispatchAscyncOnMainQueue(^{
+        self.audioButton.selected = selected;
+    });
+}
+
+#pragma mark - 设置视频按钮选中状态
+/// 设置视频按钮选中状态
+/// @param selected 选中状态
+- (void)setupVideoButtonSelected:(BOOL)selected {
+    
+    FWDispatchAscyncOnMainQueue(^{
+        self.videoButton.selected = selected;
+    });
+}
+
+#pragma mark - 设置共享按钮选中状态
+/// 设置共享按钮选中状态
+/// @param selected 选中状态
+- (void)setupShareButtonSelected:(BOOL)selected {
+    
+    FWDispatchAscyncOnMainQueue(^{
+        self.sharingButton.selected = selected;
+    });
+}
+
 
 #pragma mark - ------ FWMeetingRoomMemberViewDelegate 代理方法 ------
 #pragma mark 成员选择回调
@@ -195,7 +485,303 @@
 /// @param account 成员信息
 - (void)memberView:(FWMeetingRoomMemberView *)memberView didSelectItemAccount:(Account *)account {
     
-    SGLOG(@"选择了成员 %@", account.id_p);
+    if ([account.id_p isEqualToString:self.roomModel.loginModel.data.account.id]) {
+        /// 选择成员为当前用户，丢弃该事件处理
+        return;
+    }
+    /// 创建对话框标题
+    NSString *title = [NSString stringWithFormat:@"%@ 所有发送流类型", [account.nickname nicknameSuitScanf]];
+    
+    @weakify(self);
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:title message:nil preferredStyle:isPhone ? UIAlertControllerStyleActionSheet : UIAlertControllerStyleAlert];
+    UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:^(UIAlertAction * action) {
+    }];
+    [alert addAction:cancelAction];
+    
+    for (Stream *stream in account.streamsArray) {
+        /// 显示视频类型的轨道列表
+        NSString *title = @"未知流";
+        /// 添加轨道列表
+        switch (stream.channelType) {
+            case ChannelType_CtDefault: {
+                /// 视频流
+                if (stream.type == StreamType_StreamMain) {
+                    /// 主码流
+                    title = [NSString stringWithFormat:@"主码流(%d)", stream.id_p];
+                } else {
+                    /// 子码流
+                    title = [NSString stringWithFormat:@"子码流(%d)", stream.id_p];
+                }
+            }
+                break;
+            case ChannelType_CtScreen: {
+                /// 共享流
+                title = [NSString stringWithFormat:@"共享流(%d)", stream.id_p];
+            }
+                break;
+            default:
+                break;
+        }
+        UIAlertAction *trackAction = [UIAlertAction actionWithTitle:title style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {
+            @strongify(self);
+            /// 声明订阅流类型
+            FWStreamType streamType = FWStreamTypeNormal;
+            /// 判断需要订阅的流类型
+            if ([title containsString:@"主码流"]) {
+                streamType = FWStreamTypeMain;
+            } else if ([title containsString:@"子码流"]) {
+                streamType = FWStreamTypeSub;
+            } else if ([title containsString:@"共享流"]) {
+                streamType = FWStreamTypeScreen;
+            }
+            /// 订阅成员视频流
+            [self.roomMemberView subscribeWithAccount:account streamType:streamType];
+        }];
+        [alert addAction:trackAction];
+    }
+    
+    UIAlertAction *emptyAction = [UIAlertAction actionWithTitle:@"取消订阅流" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {
+        @strongify(self);
+        /// 取消订阅成员视频流
+        [self.roomMemberView subscribeWithAccount:account streamType:FWStreamTypeNormal];
+    }];
+    [alert addAction:emptyAction];
+    [self presentViewController:alert animated:YES completion:nil];
+}
+
+
+#pragma mark - ------ VCSVideoCaptureDelegate 代理方法 ------
+#pragma mark 视频采集数据回调
+/// 视频采集数据回调
+/// @param capture 采集实例
+/// @param pixelBuffer 像素数据
+/// @param stamp 时间戳
+/// @param frontCamera 是否为前置摄像头
+/// @param viewChange 视图是否发生变化
+- (void)videoCapture:(VCSVideoCapture *)capture pixelBuffer:(CVPixelBufferRef)pixelBuffer stamp:(CMTime)stamp frontCamera:(BOOL)frontCamera viewChange:(int)viewChange {
+    
+    /// 渲染CVPixelBufferRef数据
+    [[VCSVideoCapture sharedInstance] displayCVPixleBuffer:pixelBuffer];
+    /// 发布视频数据流
+    [[VCSStreamMedia sharedInstance] publishVideoWithSampleBuffer:pixelBuffer stamp:stamp frontCamera:frontCamera viewChange:viewChange];
+}
+
+
+#pragma mark - ------ VCSScreenRecordServerDelegate 代理方法 ------
+#pragma mark 屏幕录制编码后数据回调
+/// 屏幕录制编码后数据回调
+/// @param server 服务端实例
+/// @param streamData 共享流数据
+/// @param pts 显示时间戳
+/// @param dts 解码时间戳
+/// @param angle 显示角度
+/// @param keyframe 是否为关键帧
+- (void)screenServer:(VCSScreenRecordServer *)server didStreamData:(NSData *)streamData pts:(uint32_t)pts dts:(uint32_t)dts angle:(int)angle keyframe:(BOOL)keyframe {
+    
+    /// 发布屏幕共享流
+    [[VCSStreamMedia sharedInstance] publishScreenEncoderWithStreamData:streamData stamp:pts dts:dts displayAngle:angle];
+}
+
+#pragma mark 屏幕录制音频原始数据回调
+/// 屏幕录制音频原始数据回调
+/// @param server 服务端实例
+/// @param streamData 共享音频数据
+/// @param pts 显示时间戳
+/// @param dts 解码时间戳
+- (void)screenServer:(VCSScreenRecordServer *)server didAudioStreamData:(NSData *)streamData pts:(uint32_t)pts dts:(uint32_t)dts {
+    
+    
+}
+
+#pragma mark 屏幕录制实时帧率回调
+/// 屏幕录制实时帧率回调
+/// @param server 服务端实例
+/// @param framerate 当前帧率
+/// @param bitrate 当前码率
+/// @param height 当前分辨率
+/// @param width 当前分辨率
+- (void)screenServer:(VCSScreenRecordServer *)server didChangeFramerate:(int)framerate bitrate:(int)bitrate height:(int)height width:(int)width {
+    
+    
+}
+
+#pragma mark 屏幕录制状态码回调
+/// 投屏状态码回调
+/// @param server 服务端实例
+/// @param status 屏幕录制状态
+- (void)screenServer:(VCSScreenRecordServer *)server didProcessStatus:(VCSScreenRecordStatus)status {
+    
+    /// 根据本地屏幕采集状态通知会控共享状态
+    if (status == VCSScreenRecordStatusStart) {
+        /// 开启屏幕共享
+        [[VCSMeetControl sharedInstance] startRoomStartToShareWithSharingType:SharingType_StDesktop sharingPicURL:nil sharingRelativePicURL:nil];
+    } else {
+        /// 结束屏幕共享
+        [[VCSMeetControl sharedInstance] stopRoomStopSharing];
+    }
+    /// 设置共享按钮选中状态
+    [self setupShareButtonSelected:(status == VCSScreenRecordStatusStart)];
+}
+
+
+#pragma mark - ------ VCSStreamMediaDelegate 代理方法 ------
+#pragma mark 流媒体连接成功回调
+/// 流媒体连接成功回调
+/// @param stream 流媒体组件实例
+/// @param finish 完成状态
+- (void)streamMedia:(VCSStreamMedia *)stream didConnectionFinish:(BOOL)finish {
+    
+    /// 日志埋点
+    SGLOG(@"流媒体连接成功");
+    /// 获取音频状态
+    BOOL audioState = self.roomModel.controlModel.audioState;
+    /// 获取视频状态
+    BOOL videoState = self.roomModel.controlModel.videoState;
+    /// 设置音频路由
+    [[VCSStreamMedia sharedInstance] setAudioRoute:VCSAudioRouteSpeaker];
+    /// 检测摄像头权限
+    [FWToolBridge requestAuthorization:FWPermissionsStateVideo superVC:[FWEntryBridge sharedManager].appDelegate.window.rootViewController result:^(BOOL status) {
+        /// 设置推流状态
+        [[VCSStreamMedia sharedInstance] enabledPublish:videoState];
+        /// 检测麦克风权限
+        [FWToolBridge requestAuthorization:FWPermissionsStateAudio superVC:[FWEntryBridge sharedManager].appDelegate.window.rootViewController result:^(BOOL status) {
+            /// 设置音频发送状态
+            [[VCSStreamMedia sharedInstance] enabledSendAudio:audioState];
+        }];
+    }];
+}
+
+#pragma mark 流媒体重连完成回调
+/// 流媒体重连完成回调
+/// @param stream 流媒体组件实例
+/// @param finish 完成状态
+- (void)streamMedia:(VCSStreamMedia *)stream didReconnectionFinish:(BOOL)finish {
+    
+    /// 重置远程流订阅
+    [[FWRemoteSession sharedInstance] resetRemoteStream];
+}
+
+#pragma mark 应用性能使用情况回调
+/// 应用性能使用情况回调
+/// @param stream 流媒体组件实例
+/// @param memory 内存占用
+/// @param cpuUsage CUP使用率
+- (void)streamMedia:(VCSStreamMedia *)stream onApplicationPerformance:(double)memory cpuUsage:(double)cpuUsage {
+    
+    
+}
+
+#pragma mark 视频方向变化回调
+/// 视频方向变化回调
+/// @param stream 流媒体组件实例
+/// @param track 视频轨道
+/// @param angle 视频角度
+- (void)streamMedia:(VCSStreamMedia *)stream didVideoOrientationChange:(VCSTrackIdentifierFlags)track angle:(int)angle {
+    
+    
+}
+
+#pragma mark 远程成员音频状态回调
+/// 远程成员音频状态回调
+/// @param stream 流媒体组件实例
+/// @param audioArray 成员音频列表
+- (void)streamMedia:(VCSStreamMedia *)stream onRemoteMemberAudioStatus:(NSArray<VCSStreamAudioModel *> *)audioArray {
+    
+    
+}
+
+#pragma mark 服务是否允许发言
+/// 服务是否允许发言
+/// @param stream 流媒体组件实例
+/// @param enabled 是否允许发言，YES-允许发言 NO-不允许发言
+- (void)streamMedia:(VCSStreamMedia *)stream onServiceEnabledSpeak:(BOOL)enabled {
+    
+    
+}
+
+#pragma mark 远程流数据回调
+/// 远程流数据回调
+/// @param stream 流媒体组件实例
+/// @param streamId 远程成员标识
+/// @param stamp 视频时间戳
+/// @param track 视频轨道
+/// @param type 视频存储格式
+/// @param angle 视频角度
+/// @param width 视频宽
+/// @param height 视频高
+/// @param yData 像素数据
+/// @param uData 像素数据
+/// @param vData 像素数据
+- (void)streamMedia:(VCSStreamMedia *)stream didRemoteStreamDataStreamId:(int)streamId stamp:(int)stamp track:(int)track type:(int)type angle:(int)angle width:(int)width height:(int)height yData:(void *)yData uData:(void *)uData vData:(void *)vData {
+    
+    /// 渲染远程流数据
+    [[FWRemoteSession sharedInstance] remoteStreamDataStreamId:streamId stamp:stamp trackId:(VCSTrackIdentifierFlags)track type:type angle:angle width:width height:height yData:yData uData:uData vData:vData];
+}
+
+#pragma mark 下行码率自适应状态回调
+/// 下行码率自适应状态回调
+/// @param stream 流媒体组件实例
+/// @param streamId 远程成员标识
+/// @param state 下行码率自适应状态
+- (void)streamMedia:(VCSStreamMedia *)stream onDownBitrateAdaptiveStreamId:(int)streamId state:(VCSDownBitrateAdaptiveState)state {
+    
+    
+}
+
+#pragma mark 上行码率自适应状态回调
+/// 上行码率自适应状态回调
+/// @param stream 流媒体组件实例
+/// @param state 上行码率自适应状态
+- (void)streamMedia:(VCSStreamMedia *)stream onUploadBitrateAdaptiveState:(VCSUploadBitrateAdaptiveState)state {
+    
+    
+}
+
+#pragma mark 下行平均丢包档位变化回调
+/// 下行平均丢包档位变化回调
+/// @param stream 流媒体组件实例
+/// @param state 下行平均丢包档位
+- (void)streamMedia:(VCSStreamMedia *)stream onDownLossLevelChangeState:(VCSDownLossLevelState)state {
+    
+    
+}
+
+#pragma mark 下行平均丢包率回调
+/// 下行平均丢包率回调
+/// @param stream 流媒体组件实例
+/// @param average 下行平均丢包率
+- (void)streamMedia:(VCSStreamMedia *)stream onDownLossRateAverage:(CGFloat)average {
+    
+    
+}
+
+#pragma mark 流媒体发送状态数据回调
+/// 流媒体发送状态数据回调
+/// @param stream 流媒体组件实例
+/// @param sendModel 流媒体发送状态数据
+- (void)streamMedia:(VCSStreamMedia *)stream onSendStreamModel:(VCSStreamSendModel *)sendModel {
+    
+    
+}
+
+#pragma mark 流媒体接收状态数据回调
+/// 流媒体接收状态数据回调
+/// @param stream 流媒体组件实例
+/// @param receiveModel 流媒体接收状态数据
+- (void)streamMedia:(VCSStreamMedia *)stream onReceiveStreamModel:(VCSStreamReceiveModel *)receiveModel {
+    
+    
+}
+
+#pragma mark 音频路由变更回调
+/// 音频路由变更回调
+/// @param stream 流媒体组件实例
+/// @param route 音频路由
+/// @param previousRoute 变更前的音频路由
+- (void)streamMedia:(VCSStreamMedia *)stream onAudioRouteChanged:(VCSAudioRoute)route previousRoute:(VCSAudioRoute)previousRoute {
+    
+    /// 埋点日志
+    SGLOG(@"当前音频路由 route = %ld，previousRoute = %ld", route, previousRoute);
 }
 
 
@@ -240,7 +826,7 @@
 - (void)meetControl:(VCSMeetControl *)meetControl onMemberStateNotify:(AccountNotify *)notify error:(NSError *)error {
     
     /// 更新成员信息
-    [self.roomMemberView memberUpdateWithAccount:notify.account];
+    [self.roomMemberView memberUpdateWithAccount:notify.account isSelf:NO];
 }
 
 #pragma mark 踢出房间通知
@@ -269,7 +855,7 @@
 - (void)meetControl:(VCSMeetControl *)meetControl onMemberEnterNotify:(EnterNotify *)notify error:(NSError *)error {
     
     /// 更新成员信息
-    [self.roomMemberView memberUpdateWithAccount:notify.account];
+    [self.roomMemberView memberUpdateWithAccount:notify.account isSelf:NO];
 }
 
 #pragma mark 成员离开房间通知
@@ -316,7 +902,7 @@
 - (void)meetControl:(VCSMeetControl *)meetControl onSelfStateNotify:(MyAccountNotify *)notify error:(NSError *)error firstNotify:(BOOL)firstNotify {
     
     /// 更新成员信息
-    [self.roomMemberView memberUpdateWithAccount:notify.account];
+    [self.roomMemberView memberUpdateWithAccount:notify.account isSelf:YES];
 }
 
 #pragma mark 码流信息变化通知
@@ -460,6 +1046,13 @@
 - (void)meetControl:(VCSMeetControl *)meetControl onTransparentEvent:(VCSMeetCommandEvent)event content:(NSString *)content {
     
     
+}
+
+#pragma mark - 资源释放
+- (void)dealloc {
+    
+    /// 取消限制锁屏
+    [[UIApplication sharedApplication] setIdleTimerDisabled:NO];
 }
 
 @end

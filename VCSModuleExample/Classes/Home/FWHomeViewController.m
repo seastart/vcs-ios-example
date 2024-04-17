@@ -9,9 +9,6 @@
 #import "FWHomeViewController.h"
 #import "FWMeetingRoomModel.h"
 
-/// 分辨率列表
-#define FWRESOLUTIONLISTS @[NSLocalizedString(@"720P", nil), NSLocalizedString(@"480P", nil)]
-
 @interface FWHomeViewController ()
 
 /// 房间号码
@@ -25,10 +22,6 @@
 @property (weak, nonatomic) IBOutlet UIButton *videoSwitchButton;
 /// 音频控制按钮
 @property (weak, nonatomic) IBOutlet UIButton *audioSwitchButton;
-/// 分辨率选择按钮
-@property (weak, nonatomic) IBOutlet UIButton *resolutionButton;
-/// 分辨率标签
-@property (weak, nonatomic) IBOutlet UILabel *resolutionLabel;
 
 /// 进入房间按钮
 @property (weak, nonatomic) IBOutlet UIButton *enterButton;
@@ -74,9 +67,7 @@
     /// 设置默认参会昵称
     self.nicknameTextField.text = self.loginModel.data.account.nickname;
     /// 设置当前IP地址
-    self.ipAddressLabel.text = [NSString stringWithFormat:@"当前IP地址：%@",[FWIPAddressBridge currentIpAddress]];
-    /// 设置默认分辨率
-    self.resolutionLabel.text = @"720P";
+    self.ipAddressLabel.text = [NSString stringWithFormat:@"当前IP地址：%@", [FWIPAddressBridge currentIpAddress]];
     
     /// 绑定动态响应信号
     [self bindSignal];
@@ -100,13 +91,6 @@
         self.audioSwitchButton.selected = !self.audioSwitchButton.selected;
     }];
     
-    /// 绑定分辨率选择按钮事件
-    [[self.resolutionButton rac_signalForControlEvents :UIControlEventTouchUpInside] subscribeNext:^(__kindof UIControl * _Nullable control) {
-        @strongify(self);
-        /// 列举分辨率选项
-        [self onEnumResolution];
-    }];
-    
     /// 绑定进入房间按钮事件
     [[self.enterButton rac_signalForControlEvents :UIControlEventTouchUpInside] subscribeNext:^(__kindof UIControl * _Nullable control) {
         @strongify(self);
@@ -122,29 +106,6 @@
     }];
 }
 
-#pragma mark - 列举分辨率选项
-/// 列举分辨率选项
-- (void)onEnumResolution {
-    
-    @weakify(self);
-    UIAlertController *alert = [UIAlertController alertControllerWithTitle:nil message:nil preferredStyle:isPhone ? UIAlertControllerStyleActionSheet : UIAlertControllerStyleAlert];
-    UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:NSLocalizedString(@"取消", nil) style:UIAlertActionStyleCancel handler:^(UIAlertAction * action) {
-    }];
-    [alert addAction:cancelAction];
-    
-    /// 批量设置服务地址选项列表
-    for (NSString *value in FWRESOLUTIONLISTS) {
-        UIAlertAction *renewAction = [UIAlertAction actionWithTitle:value style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {
-            @strongify(self);
-            /// 变更显示分辨率
-            self.resolutionLabel.text = value;
-        }];
-        [alert addAction:renewAction];
-    }
-    
-    [self presentViewController:alert animated:YES completion:nil];
-}
-
 #pragma mark - 进入房间事件
 /// 进入房间事件
 - (void)enterRoomClick {
@@ -155,8 +116,6 @@
     NSString *nicknameText = self.nicknameTextField.text;
     /// 获取调试地址
     NSString *debugText = self.debugTextField.text;
-    /// 获取分辨率
-    NSString *resolutionText = self.resolutionLabel.text;
     /// 获取视频状态
     BOOL videoState = self.videoSwitchButton.selected;
     /// 获取音频状态
@@ -172,11 +131,6 @@
         return;
     }
     
-    if (kStringIsEmpty(resolutionText)) {
-        [FWToastBridge showToastAction:@"请选择相应分辨率"];
-        return;
-    }
-    
     /// 显示加载
     [FWToastBridge showToastAction];
     
@@ -188,8 +142,6 @@
     controlModel.videoState = videoState;
     /// 设置音频状态
     controlModel.audioState = audioState;
-    /// 设置分辨率
-    controlModel.resolutionText = resolutionText;
     
     /// 构建请求参数
     NSMutableDictionary *params = [NSMutableDictionary dictionary];

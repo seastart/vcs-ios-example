@@ -88,8 +88,6 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, assign) BOOL videoState;
 /// 音频状态
 @property (nonatomic, assign) BOOL audioState;
-/// 分辨率
-@property (nonatomic, assign) NSString *resolutionText;
 
 @end
 

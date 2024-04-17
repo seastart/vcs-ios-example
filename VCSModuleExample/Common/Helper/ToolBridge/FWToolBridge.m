@@ -260,4 +260,38 @@
     [superVC presentViewController:alert animated:YES completion:nil];
 }
 
+#pragma mark - 检测应用是否处于活跃状态
+/// 检测应用是否处于活跃状态
++ (BOOL)applicationActive {
+    
+    return ([UIApplication sharedApplication].applicationState == UIApplicationStateActive);
+}
+
+#pragma mark - 释放流媒体像素数据资源
+/// 释放流媒体像素数据资源
+/// @param yData 流媒体像素数据
+/// @param uData 流媒体像素数据
+/// @param vData 流媒体像素数据
++ (void)destroyStreamWithyData:(void *)yData uData:(void *)uData vData:(void *)vData {
+    
+    if (yData) {
+        free(yData);
+    }
+    if (uData) {
+        free(uData);
+    }
+    if (vData) {
+        free(vData);
+    }
+}
+
+#pragma mark - 构造远程画布索引键
+/// 构造远程画布索引键
+/// @param streamId 用户标识
+/// @param trackId 轨道标识
++ (NSString *)formationRemoteCanvasKey:(int)streamId trackId:(NSInteger)trackId {
+    
+    return [NSString stringWithFormat:@"%d_seastart_%ld", streamId, trackId];
+}
+
 @end

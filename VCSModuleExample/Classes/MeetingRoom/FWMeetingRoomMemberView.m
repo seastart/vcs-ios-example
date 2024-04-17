@@ -144,7 +144,8 @@
 #pragma mark - 成员更新信息
 /// 成员更新信息
 /// @param account 成员信息
-- (void)memberUpdateWithAccount:(Account *)account {
+/// @param isSelf 是否为自己
+- (void)memberUpdateWithAccount:(Account *)account isSelf:(BOOL)isSelf {
     
     /// 获取成员标识
     NSString *userId = [NSString stringWithFormat:@"%@", account.id_p];
@@ -153,7 +154,7 @@
     /// 不存在该成员
     if (!windowView) {
         /// 创建成员窗口视图
-        FWMeetingRoomMemberWindow *windowView = [[FWMeetingRoomMemberWindow alloc] initWithFrame:CGRectMake(0, 0, FW_WINDOW_ITEM_WIDTH, FW_WINDOW_ITEM_HEIGHT)];
+        FWMeetingRoomMemberWindow *windowView = [[FWMeetingRoomMemberWindow alloc] initWithFrame:CGRectMake(0, 0, FW_WINDOW_ITEM_WIDTH, FW_WINDOW_ITEM_HEIGHT) isSelf:isSelf];
         /// 关联成员信息
         windowView.account = account;
         /// 设置代理回调
@@ -185,6 +186,25 @@
         [self.displayItems removeObjectForKey:userId];
         /// 释放成员窗口视图
         [windowView removeFromSuperview];
+    }
+}
+
+#pragma mark - 订阅成员视频流
+/// 订阅成员视频流
+/// @param account 成员信息
+/// @param streamType 订阅流类型
+- (void)subscribeWithAccount:(Account *)account streamType:(FWStreamType)streamType {
+    
+    /// 获取成员标识
+    NSString *userId = [NSString stringWithFormat:@"%@", account.id_p];
+    /// 获取成员视图
+    FWMeetingRoomMemberWindow *windowView = [self.displayItems objectForKey:userId];
+    /// 存在该成员
+    if (windowView) {
+        /// 设置订阅流类型
+        windowView.streamType = streamType;
+        /// 更新成员信息
+        windowView.account = account;
     }
 }
 

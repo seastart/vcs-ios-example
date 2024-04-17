@@ -50,6 +50,22 @@ typedef enum : NSUInteger {
     FWUserCodeStateResetCode
 } FWUserCodeState;
 
+#pragma mark - 订阅流类型
+/**
+ 订阅流类型
+
+- FWStreamTypeNormal: 默认类型
+- FWStreamTypeMain: 主码流类型
+- FWStreamTypeSub: 子码流类型
+- FWStreamTypeScreen: 共享流类型
+*/
+typedef enum : NSUInteger {
+    FWStreamTypeNormal,
+    FWStreamTypeMain,
+    FWStreamTypeSub,
+    FWStreamTypeScreen
+} FWStreamType;
+
 @interface FWEnum : NSObject
 
 @end

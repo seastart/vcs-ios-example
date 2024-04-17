@@ -11,8 +11,20 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FWMeetingRoomViewController">
             <connections>
+                <outlet property="audioButton" destination="ZCZ-9b-jyl" id="vfV-2h-BTF"/>
+                <outlet property="audioButtonImage" destination="hNq-El-0kn" id="sPC-NF-D88"/>
+                <outlet property="audioButtonLable" destination="tSZ-5t-mW5" id="6Mb-lC-0uI"/>
+                <outlet property="cameraButton" destination="0gv-9g-OUW" id="wmB-4s-QNw"/>
                 <outlet property="hangupButton" destination="nj5-zW-Iub" id="7Lc-m0-3rf"/>
                 <outlet property="roomMemberView" destination="mx5-fV-jnC" id="pwi-SW-9bw"/>
+                <outlet property="roomnoLabel" destination="5bq-RO-tYV" id="gLZ-6h-qdn"/>
+                <outlet property="sharingButton" destination="hzH-Fn-73v" id="B5S-cg-4cY"/>
+                <outlet property="sharingButtonImage" destination="Jzn-Gz-vVP" id="v9f-0L-Mda"/>
+                <outlet property="sharingButtonLable" destination="XhM-Su-Qaf" id="PCi-4a-VBs"/>
+                <outlet property="speakerButton" destination="GlV-qX-gUk" id="qQ2-P8-Mkv"/>
+                <outlet property="videoButton" destination="iPQ-UZ-NE7" id="OPn-b5-yIE"/>
+                <outlet property="videoButtonImage" destination="XaO-Sk-7Ft" id="6pF-Sv-45O"/>
+                <outlet property="videoButtonLable" destination="25F-J9-ORx" id="NVY-x8-rJI"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -27,6 +39,24 @@
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UMQ-eR-o2p">
                             <rect key="frame" x="0.0" y="59" width="393" height="55"/>
                             <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GlV-qX-gUk">
+                                    <rect key="frame" x="16" y="10" width="35" height="35"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="35" id="YoE-7p-GPS"/>
+                                    </constraints>
+                                    <state key="normal" image="icon_room_camera"/>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0gv-9g-OUW">
+                                    <rect key="frame" x="51" y="10" width="35" height="35"/>
+                                    <state key="normal" image="icon_room_speaker"/>
+                                    <state key="selected" image="icon_room_speaker_un"/>
+                                </button>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="000 000 000" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5bq-RO-tYV">
+                                    <rect key="frame" x="153.66666666666666" y="19" width="85.666666666666657" height="17"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nj5-zW-Iub">
                                     <rect key="frame" x="313" y="13.666666666666671" width="70" height="28"/>
                                     <color key="backgroundColor" red="0.98431372549999996" green="0.28235294119999998" blue="0.28235294119999998" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
@@ -48,9 +78,18 @@
                             </subviews>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
+                                <constraint firstItem="5bq-RO-tYV" firstAttribute="centerX" secondItem="UMQ-eR-o2p" secondAttribute="centerX" id="95c-rS-IBo"/>
                                 <constraint firstItem="nj5-zW-Iub" firstAttribute="centerY" secondItem="UMQ-eR-o2p" secondAttribute="centerY" id="GWU-7u-7Dm"/>
+                                <constraint firstItem="GlV-qX-gUk" firstAttribute="leading" secondItem="UMQ-eR-o2p" secondAttribute="leading" constant="16" id="HAQ-oR-ws8"/>
+                                <constraint firstItem="GlV-qX-gUk" firstAttribute="centerY" secondItem="UMQ-eR-o2p" secondAttribute="centerY" id="LM9-fP-xW9"/>
+                                <constraint firstItem="0gv-9g-OUW" firstAttribute="leading" secondItem="GlV-qX-gUk" secondAttribute="trailing" id="PCf-ud-pWr"/>
                                 <constraint firstAttribute="trailing" secondItem="nj5-zW-Iub" secondAttribute="trailing" constant="10" id="S5m-vf-BVc"/>
+                                <constraint firstItem="0gv-9g-OUW" firstAttribute="width" secondItem="0gv-9g-OUW" secondAttribute="height" multiplier="1:1" id="WOo-Zb-RJ8"/>
+                                <constraint firstItem="5bq-RO-tYV" firstAttribute="centerY" secondItem="UMQ-eR-o2p" secondAttribute="centerY" id="bem-cd-2RR"/>
+                                <constraint firstItem="GlV-qX-gUk" firstAttribute="width" secondItem="GlV-qX-gUk" secondAttribute="height" multiplier="1:1" id="lxD-1x-lko"/>
                                 <constraint firstAttribute="height" constant="55" id="m3t-62-gyc"/>
+                                <constraint firstItem="0gv-9g-OUW" firstAttribute="centerY" secondItem="GlV-qX-gUk" secondAttribute="centerY" id="qK6-Kq-0qY"/>
+                                <constraint firstItem="0gv-9g-OUW" firstAttribute="height" secondItem="GlV-qX-gUk" secondAttribute="height" id="x3z-gs-zay"/>
                             </constraints>
                         </view>
                     </subviews>
@@ -73,9 +112,122 @@
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="O8X-Aq-Zl6">
                             <rect key="frame" x="0.0" y="0.0" width="393" height="56"/>
+                            <subviews>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="P7K-zc-WHH">
+                                    <rect key="frame" x="0.0" y="0.0" width="131" height="56"/>
+                                    <subviews>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hNq-El-0kn">
+                                            <rect key="frame" x="50.666666666666657" y="5" width="30" height="30"/>
+                                            <state key="normal" image="icon_room_audio"/>
+                                        </button>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="静音" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tSZ-5t-mW5">
+                                            <rect key="frame" x="54.333333333333336" y="37.666666666666629" width="22.666666666666664" height="13.333333333333336"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZCZ-9b-jyl">
+                                            <rect key="frame" x="0.0" y="0.0" width="131" height="56"/>
+                                            <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <state key="normal">
+                                                <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </state>
+                                        </button>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <constraints>
+                                        <constraint firstAttribute="bottom" secondItem="tSZ-5t-mW5" secondAttribute="bottom" constant="5" id="0As-BK-Jem"/>
+                                        <constraint firstItem="tSZ-5t-mW5" firstAttribute="centerX" secondItem="hNq-El-0kn" secondAttribute="centerX" id="FVw-X5-T9J"/>
+                                        <constraint firstItem="ZCZ-9b-jyl" firstAttribute="width" secondItem="P7K-zc-WHH" secondAttribute="width" id="XeA-3a-Z6r"/>
+                                        <constraint firstItem="ZCZ-9b-jyl" firstAttribute="centerY" secondItem="P7K-zc-WHH" secondAttribute="centerY" id="evY-nU-nY1"/>
+                                        <constraint firstItem="ZCZ-9b-jyl" firstAttribute="height" secondItem="P7K-zc-WHH" secondAttribute="height" id="iyY-Ma-6JI"/>
+                                        <constraint firstItem="hNq-El-0kn" firstAttribute="centerX" secondItem="P7K-zc-WHH" secondAttribute="centerX" id="s6g-8W-U5f"/>
+                                        <constraint firstItem="ZCZ-9b-jyl" firstAttribute="centerX" secondItem="P7K-zc-WHH" secondAttribute="centerX" id="wKN-cc-aM4"/>
+                                        <constraint firstItem="hNq-El-0kn" firstAttribute="top" secondItem="P7K-zc-WHH" secondAttribute="top" constant="5" id="weE-1M-qc8"/>
+                                    </constraints>
+                                </view>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jkp-uk-Zc1">
+                                    <rect key="frame" x="131" y="0.0" width="131" height="56"/>
+                                    <subviews>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XaO-Sk-7Ft">
+                                            <rect key="frame" x="50.666666666666657" y="5" width="30" height="30"/>
+                                            <state key="normal" image="icon_room_video"/>
+                                        </button>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="关闭视频" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="25F-J9-ORx">
+                                            <rect key="frame" x="43" y="37.666666666666629" width="45" height="13.333333333333336"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iPQ-UZ-NE7">
+                                            <rect key="frame" x="0.0" y="0.0" width="131" height="56"/>
+                                            <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <state key="normal">
+                                                <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </state>
+                                        </button>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <constraints>
+                                        <constraint firstItem="iPQ-UZ-NE7" firstAttribute="width" secondItem="Jkp-uk-Zc1" secondAttribute="width" id="FZy-Wu-NUV"/>
+                                        <constraint firstItem="iPQ-UZ-NE7" firstAttribute="height" secondItem="Jkp-uk-Zc1" secondAttribute="height" id="KY3-hb-xY6"/>
+                                        <constraint firstItem="25F-J9-ORx" firstAttribute="centerX" secondItem="XaO-Sk-7Ft" secondAttribute="centerX" id="Qd4-ud-wPm"/>
+                                        <constraint firstItem="XaO-Sk-7Ft" firstAttribute="centerX" secondItem="Jkp-uk-Zc1" secondAttribute="centerX" id="ePJ-5M-Phw"/>
+                                        <constraint firstItem="iPQ-UZ-NE7" firstAttribute="centerY" secondItem="Jkp-uk-Zc1" secondAttribute="centerY" id="gaN-oW-aEy"/>
+                                        <constraint firstItem="iPQ-UZ-NE7" firstAttribute="centerX" secondItem="Jkp-uk-Zc1" secondAttribute="centerX" id="vKK-Kt-Not"/>
+                                    </constraints>
+                                </view>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AiI-5k-VQU">
+                                    <rect key="frame" x="262" y="0.0" width="131" height="56"/>
+                                    <subviews>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jzn-Gz-vVP">
+                                            <rect key="frame" x="50.666666666666686" y="5" width="30" height="30"/>
+                                            <state key="normal" image="icon_room_share"/>
+                                        </button>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="共享屏幕" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XhM-Su-Qaf">
+                                            <rect key="frame" x="43" y="37.666666666666629" width="45" height="13.333333333333336"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hzH-Fn-73v">
+                                            <rect key="frame" x="0.0" y="0.0" width="131" height="56"/>
+                                            <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <state key="normal">
+                                                <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </state>
+                                        </button>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <constraints>
+                                        <constraint firstItem="hzH-Fn-73v" firstAttribute="centerX" secondItem="AiI-5k-VQU" secondAttribute="centerX" id="OYz-Tf-IAX"/>
+                                        <constraint firstItem="hzH-Fn-73v" firstAttribute="width" secondItem="AiI-5k-VQU" secondAttribute="width" id="Vwf-vL-qH3"/>
+                                        <constraint firstItem="hzH-Fn-73v" firstAttribute="centerY" secondItem="AiI-5k-VQU" secondAttribute="centerY" id="YNr-Av-G02"/>
+                                        <constraint firstItem="XhM-Su-Qaf" firstAttribute="centerX" secondItem="Jzn-Gz-vVP" secondAttribute="centerX" id="dEz-84-aF5"/>
+                                        <constraint firstItem="hzH-Fn-73v" firstAttribute="height" secondItem="AiI-5k-VQU" secondAttribute="height" id="mt2-XJ-C1I"/>
+                                        <constraint firstItem="Jzn-Gz-vVP" firstAttribute="centerX" secondItem="AiI-5k-VQU" secondAttribute="centerX" id="xuQ-mm-cNh"/>
+                                    </constraints>
+                                </view>
+                            </subviews>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
+                                <constraint firstItem="Jkp-uk-Zc1" firstAttribute="width" secondItem="P7K-zc-WHH" secondAttribute="width" id="29y-en-Xag"/>
+                                <constraint firstItem="AiI-5k-VQU" firstAttribute="top" secondItem="O8X-Aq-Zl6" secondAttribute="top" id="2Zu-8J-YnE"/>
+                                <constraint firstItem="Jzn-Gz-vVP" firstAttribute="centerY" secondItem="XaO-Sk-7Ft" secondAttribute="centerY" id="3Ll-Q7-cG7"/>
+                                <constraint firstItem="Jkp-uk-Zc1" firstAttribute="top" secondItem="O8X-Aq-Zl6" secondAttribute="top" id="8UG-E7-TaR"/>
+                                <constraint firstItem="XhM-Su-Qaf" firstAttribute="centerY" secondItem="25F-J9-ORx" secondAttribute="centerY" id="GPr-nM-qJl"/>
+                                <constraint firstItem="Jkp-uk-Zc1" firstAttribute="leading" secondItem="P7K-zc-WHH" secondAttribute="trailing" id="Sa3-bS-45r"/>
+                                <constraint firstItem="P7K-zc-WHH" firstAttribute="height" secondItem="O8X-Aq-Zl6" secondAttribute="height" id="TiQ-HN-kPR"/>
                                 <constraint firstAttribute="height" constant="56" id="UbF-Of-RNb"/>
+                                <constraint firstItem="AiI-5k-VQU" firstAttribute="width" secondItem="P7K-zc-WHH" secondAttribute="width" id="YDf-oI-U6x"/>
+                                <constraint firstItem="AiI-5k-VQU" firstAttribute="height" secondItem="P7K-zc-WHH" secondAttribute="height" id="Zuv-h7-vlb"/>
+                                <constraint firstItem="AiI-5k-VQU" firstAttribute="leading" secondItem="Jkp-uk-Zc1" secondAttribute="trailing" id="acN-kU-Ot3"/>
+                                <constraint firstItem="P7K-zc-WHH" firstAttribute="leading" secondItem="O8X-Aq-Zl6" secondAttribute="leading" id="cIP-Lp-4jJ"/>
+                                <constraint firstItem="XaO-Sk-7Ft" firstAttribute="centerY" secondItem="hNq-El-0kn" secondAttribute="centerY" id="dbi-40-dYd"/>
+                                <constraint firstAttribute="trailing" secondItem="AiI-5k-VQU" secondAttribute="trailing" id="etY-F0-fqX"/>
+                                <constraint firstItem="P7K-zc-WHH" firstAttribute="top" secondItem="O8X-Aq-Zl6" secondAttribute="top" id="he1-Eu-XzE"/>
+                                <constraint firstItem="25F-J9-ORx" firstAttribute="centerY" secondItem="tSZ-5t-mW5" secondAttribute="centerY" id="kq1-Pf-s9M"/>
+                                <constraint firstItem="Jkp-uk-Zc1" firstAttribute="height" secondItem="P7K-zc-WHH" secondAttribute="height" id="xKz-qn-xQZ"/>
                             </constraints>
                         </view>
                     </subviews>
@@ -107,6 +259,12 @@
         </view>
     </objects>
     <resources>
+        <image name="icon_room_audio" width="30" height="30"/>
+        <image name="icon_room_camera" width="20" height="20"/>
+        <image name="icon_room_share" width="30" height="30"/>
+        <image name="icon_room_speaker" width="20" height="20"/>
+        <image name="icon_room_speaker_un" width="20" height="20"/>
+        <image name="icon_room_video" width="30" height="30"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

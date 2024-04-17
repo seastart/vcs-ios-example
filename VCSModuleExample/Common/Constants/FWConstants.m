@@ -9,9 +9,9 @@
 #import "FWConstants.h"
 
 /// 组件APPID
-NSString * const VCSSDKAPPID = <# 替换成平台分配的Appid #>
+NSString * const VCSSDKAPPID = @"0a16828823ce41c5ad040be3ed384c14";
 /// 组件APPKEY
-NSString * const VCSSDKAPPKEY = <# 替换成平台分配的AppKey #>
+NSString * const VCSSDKAPPKEY = @"a67c660b29234e2891cc6627fc6401ce";
 /// 组件签名
 NSString * const VCSSDKSIGNATURE = @"";
 /// 加密密钥

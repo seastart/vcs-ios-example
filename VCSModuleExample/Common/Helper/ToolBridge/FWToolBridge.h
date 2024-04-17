@@ -66,6 +66,21 @@ typedef void (^FWPermissionsResultBlock)(BOOL status);
 /// @param resultBlock 返回结果
 + (void)requestAuthorization:(FWPermissionsState)state superVC:(nullable UIViewController *)superVC result:(nullable FWPermissionsResultBlock)resultBlock;
 
+/// 检测应用是否处于活跃状态
++ (BOOL)applicationActive;
+
+/// 释放流媒体像素数据资源
+/// @param yData 流媒体像素数据
+/// @param uData 流媒体像素数据
+/// @param vData 流媒体像素数据
++ (void)destroyStreamWithyData:(void *)yData uData:(void *)uData vData:(void *)vData;
+
+#pragma mark - 构造远程画布索引键
+/// 构造远程画布索引键
+/// @param streamId 用户标识
+/// @param trackId 轨道标识
++ (NSString *)formationRemoteCanvasKey:(int)streamId trackId:(NSInteger)trackId;
+
 @end
 
 NS_ASSUME_NONNULL_END

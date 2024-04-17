@@ -67,6 +67,10 @@
 		F47FD3F82BCFA5EA006579F2 /* FWMeetingRoomModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F47FD3ED2BCFA5E9006579F2 /* FWMeetingRoomModel.m */; };
 		F47FD3F92BCFA5EA006579F2 /* FWMeetingRoomViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F47FD3EF2BCFA5E9006579F2 /* FWMeetingRoomViewController.m */; };
 		F47FD3FA2BCFA5EA006579F2 /* FWMeetingRoomViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F47FD3F02BCFA5E9006579F2 /* FWMeetingRoomViewController.xib */; };
+		F47FD3FD2BCFD07B006579F2 /* FWMeetingRoomMemberStatusView.m in Sources */ = {isa = PBXBuildFile; fileRef = F47FD3FC2BCFD07A006579F2 /* FWMeetingRoomMemberStatusView.m */; };
+		F47FD3FF2BCFD083006579F2 /* FWMeetingRoomMemberStatusView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F47FD3FE2BCFD083006579F2 /* FWMeetingRoomMemberStatusView.xib */; };
+		F47FD4042BCFF5A7006579F2 /* FWRemoteCanvas.m in Sources */ = {isa = PBXBuildFile; fileRef = F47FD4032BCFF5A7006579F2 /* FWRemoteCanvas.m */; };
+		F47FD4072BCFF67F006579F2 /* FWRemoteSession.m in Sources */ = {isa = PBXBuildFile; fileRef = F47FD4062BCFF67F006579F2 /* FWRemoteSession.m */; };
 		F482EEF829B6D0F500815C9C /* FWBaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F482EEF729B6D0F500815C9C /* FWBaseModel.m */; };
 		F482EEFB29B6D15200815C9C /* FWNetworkBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = F482EEFA29B6D15200815C9C /* FWNetworkBridge.m */; };
 		F482EF0229B6DF9900815C9C /* FWToolBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = F482EF0129B6DF9900815C9C /* FWToolBridge.m */; };
@@ -240,6 +244,13 @@
 		F47FD3EE2BCFA5E9006579F2 /* FWMeetingRoomViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FWMeetingRoomViewController.h; sourceTree = "<group>"; };
 		F47FD3EF2BCFA5E9006579F2 /* FWMeetingRoomViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FWMeetingRoomViewController.m; sourceTree = "<group>"; };
 		F47FD3F02BCFA5E9006579F2 /* FWMeetingRoomViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FWMeetingRoomViewController.xib; sourceTree = "<group>"; };
+		F47FD3FB2BCFD07A006579F2 /* FWMeetingRoomMemberStatusView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FWMeetingRoomMemberStatusView.h; sourceTree = "<group>"; };
+		F47FD3FC2BCFD07A006579F2 /* FWMeetingRoomMemberStatusView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FWMeetingRoomMemberStatusView.m; sourceTree = "<group>"; };
+		F47FD3FE2BCFD083006579F2 /* FWMeetingRoomMemberStatusView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FWMeetingRoomMemberStatusView.xib; sourceTree = "<group>"; };
+		F47FD4022BCFF5A7006579F2 /* FWRemoteCanvas.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FWRemoteCanvas.h; sourceTree = "<group>"; };
+		F47FD4032BCFF5A7006579F2 /* FWRemoteCanvas.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FWRemoteCanvas.m; sourceTree = "<group>"; };
+		F47FD4052BCFF67F006579F2 /* FWRemoteSession.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FWRemoteSession.h; sourceTree = "<group>"; };
+		F47FD4062BCFF67F006579F2 /* FWRemoteSession.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FWRemoteSession.m; sourceTree = "<group>"; };
 		F482EEF629B6D0F500815C9C /* FWBaseModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FWBaseModel.h; sourceTree = "<group>"; };
 		F482EEF729B6D0F500815C9C /* FWBaseModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FWBaseModel.m; sourceTree = "<group>"; };
 		F482EEF929B6D15200815C9C /* FWNetworkBridge.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FWNetworkBridge.h; sourceTree = "<group>"; };
@@ -646,6 +657,7 @@
 		F47FD3F12BCFA5E9006579F2 /* MeetingRoom */ = {
 			isa = PBXGroup;
 			children = (
+				F47FD4002BCFF577006579F2 /* FWRemoteCanvas */,
 				F47FD3EE2BCFA5E9006579F2 /* FWMeetingRoomViewController.h */,
 				F47FD3EF2BCFA5E9006579F2 /* FWMeetingRoomViewController.m */,
 				F47FD3F02BCFA5E9006579F2 /* FWMeetingRoomViewController.xib */,
@@ -655,10 +667,24 @@
 				F47FD3E92BCFA5E9006579F2 /* FWMeetingRoomMemberWindow.h */,
 				F47FD3EA2BCFA5E9006579F2 /* FWMeetingRoomMemberWindow.m */,
 				F47FD3EB2BCFA5E9006579F2 /* FWMeetingRoomMemberWindow.xib */,
+				F47FD3FB2BCFD07A006579F2 /* FWMeetingRoomMemberStatusView.h */,
+				F47FD3FC2BCFD07A006579F2 /* FWMeetingRoomMemberStatusView.m */,
+				F47FD3FE2BCFD083006579F2 /* FWMeetingRoomMemberStatusView.xib */,
 				F47FD3EC2BCFA5E9006579F2 /* FWMeetingRoomModel.h */,
 				F47FD3ED2BCFA5E9006579F2 /* FWMeetingRoomModel.m */,
 			);
 			path = MeetingRoom;
+			sourceTree = "<group>";
+		};
+		F47FD4002BCFF577006579F2 /* FWRemoteCanvas */ = {
+			isa = PBXGroup;
+			children = (
+				F47FD4052BCFF67F006579F2 /* FWRemoteSession.h */,
+				F47FD4062BCFF67F006579F2 /* FWRemoteSession.m */,
+				F47FD4022BCFF5A7006579F2 /* FWRemoteCanvas.h */,
+				F47FD4032BCFF5A7006579F2 /* FWRemoteCanvas.m */,
+			);
+			path = FWRemoteCanvas;
 			sourceTree = "<group>";
 		};
 		F482EEF529B6CF1600815C9C /* NetworkBridge */ = {
@@ -816,6 +842,7 @@
 				F47FD3882BCE7E35006579F2 /* FWDrawingConfigViewController.xib in Resources */,
 				F4DA7C8B27279E62003FDE9B /* Common.xcassets in Resources */,
 				F47FD3CB2BCF6284006579F2 /* FWSpeedTestSpeedCollectionViewCell.xib in Resources */,
+				F47FD3FF2BCFD083006579F2 /* FWMeetingRoomMemberStatusView.xib in Resources */,
 				F47FD3CF2BCF6284006579F2 /* FWSpeedTestTableViewCell.xib in Resources */,
 				F47FD37C2BCE6F28006579F2 /* FWLoginViewController.xib in Resources */,
 				F47FD39C2BCE7FBC006579F2 /* FWServeConfigViewController.xib in Resources */,
@@ -987,6 +1014,7 @@
 				F47FD3942BCE7EFA006579F2 /* FWHomeViewController.m in Sources */,
 				F482EF2A29BEE2D900815C9C /* FWEnum.m in Sources */,
 				F47FD3C52BCF6284006579F2 /* FWSpeedTestResultHeaderTableViewCell.m in Sources */,
+				F47FD4042BCFF5A7006579F2 /* FWRemoteCanvas.m in Sources */,
 				F482EEFB29B6D15200815C9C /* FWNetworkBridge.m in Sources */,
 				F47FD39B2BCE7FBC006579F2 /* FWServeConfigViewController.m in Sources */,
 				F47FD3872BCE7E35006579F2 /* FWDrawingConfigViewController.m in Sources */,
@@ -1007,8 +1035,10 @@
 				F4219D5229ADD2530069483A /* FWDateBridge.m in Sources */,
 				F47FD3CC2BCF6284006579F2 /* FWSpeedTestSpeedTableViewCell.m in Sources */,
 				F47FD3A32BCE80F4006579F2 /* FWScreenCastingViewController.m in Sources */,
+				F47FD4072BCFF67F006579F2 /* FWRemoteSession.m in Sources */,
 				F47FD3C72BCF6284006579F2 /* FWSpeedTestResultTableViewCell.m in Sources */,
 				F47FD3CE2BCF6284006579F2 /* FWSpeedTestTableViewCell.m in Sources */,
+				F47FD3FD2BCFD07B006579F2 /* FWMeetingRoomMemberStatusView.m in Sources */,
 				F40B633C26C27D0D00F42370 /* FWBaseNavigationViewController.m in Sources */,
 				F47FD3D02BCF6284006579F2 /* FWSpeedTestViewController.m in Sources */,
 				F40B61A526C27D0C00F42370 /* FWAppDelegate.m in Sources */,
