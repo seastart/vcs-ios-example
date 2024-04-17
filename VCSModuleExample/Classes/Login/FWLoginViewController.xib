@@ -20,6 +20,7 @@
                 <outlet property="screenCastingButton" destination="cxY-HP-Lss" id="JsE-zR-Wua"/>
                 <outlet property="serveAddrLable" destination="nWu-vq-PWv" id="Yhz-Vf-pxu"/>
                 <outlet property="serveConfigButton" destination="4fa-Dd-pHk" id="TYB-So-Ff2"/>
+                <outlet property="speedTestButton" destination="1Rh-NG-ekM" id="xWA-Wn-4ps"/>
                 <outlet property="view" destination="naG-n0-wkd" id="5uz-iU-XDI"/>
             </connections>
         </placeholder>
@@ -32,7 +33,7 @@
                     <rect key="frame" x="0.0" y="59" width="393" height="721"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jtT-0u-beP">
-                            <rect key="frame" x="0.0" y="0.0" width="393" height="740"/>
+                            <rect key="frame" x="0.0" y="0.0" width="393" height="808"/>
                             <subviews>
                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_login_appIcon" translatesAutoresizingMaskIntoConstraints="NO" id="WtV-iJ-SRo">
                                     <rect key="frame" x="158.66666666666666" y="60" width="76" height="76"/>
@@ -241,7 +242,7 @@
                                     </userDefinedRuntimeAttributes>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="39z-8y-A1b">
-                                    <rect key="frame" x="20" y="672" width="353" height="48"/>
+                                    <rect key="frame" x="20" y="740" width="353" height="48"/>
                                     <color key="backgroundColor" red="0.0" green="0.22352941179999999" blue="0.70196078429999997" alpha="1" colorSpace="calibratedRGB"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="48" id="k0p-VX-DTa"/>
@@ -249,6 +250,24 @@
                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                     <color key="tintColor" red="0.0" green="0.22352941179999999" blue="0.70196078429999997" alpha="1" colorSpace="calibratedRGB"/>
                                     <state key="normal" title="电子画板">
+                                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </state>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                            <integer key="value" value="4"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                    </userDefinedRuntimeAttributes>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Rh-NG-ekM">
+                                    <rect key="frame" x="20" y="672" width="353" height="48"/>
+                                    <color key="backgroundColor" red="0.0" green="0.22352941179999999" blue="0.70196078429999997" alpha="1" colorSpace="calibratedRGB"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="48" id="8HK-WB-VNT"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                    <color key="tintColor" red="0.0" green="0.22352941179999999" blue="0.70196078429999997" alpha="1" colorSpace="calibratedRGB"/>
+                                    <state key="normal" title="网络检测">
                                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </state>
                                     <userDefinedRuntimeAttributes>
@@ -266,17 +285,20 @@
                                 <constraint firstItem="dar-cc-ybE" firstAttribute="centerX" secondItem="WtV-iJ-SRo" secondAttribute="centerX" id="5zX-Dg-DWl"/>
                                 <constraint firstItem="Kta-ws-yvh" firstAttribute="leading" secondItem="jtT-0u-beP" secondAttribute="leading" constant="20" id="77P-4g-AeO"/>
                                 <constraint firstItem="RLE-Yc-ZNk" firstAttribute="top" secondItem="dar-cc-ybE" secondAttribute="bottom" constant="20" id="8TR-Mv-2AX"/>
+                                <constraint firstItem="1Rh-NG-ekM" firstAttribute="top" secondItem="cxY-HP-Lss" secondAttribute="bottom" constant="20" id="CGN-xB-eiX"/>
                                 <constraint firstItem="cxY-HP-Lss" firstAttribute="top" secondItem="4fa-Dd-pHk" secondAttribute="bottom" constant="20" id="DDQ-Dk-wf3"/>
                                 <constraint firstAttribute="trailing" secondItem="39z-8y-A1b" secondAttribute="trailing" constant="20" id="Ddt-Ax-or4"/>
                                 <constraint firstItem="4fa-Dd-pHk" firstAttribute="top" secondItem="2Hz-1R-xZO" secondAttribute="bottom" constant="20" id="Eg8-pW-7Zv"/>
+                                <constraint firstItem="1Rh-NG-ekM" firstAttribute="leading" secondItem="jtT-0u-beP" secondAttribute="leading" constant="20" id="HNj-w8-c8l"/>
                                 <constraint firstItem="WtV-iJ-SRo" firstAttribute="top" secondItem="jtT-0u-beP" secondAttribute="top" constant="60" id="Iu6-dA-IM8"/>
                                 <constraint firstItem="Iyt-Ll-6Cm" firstAttribute="top" secondItem="Kta-ws-yvh" secondAttribute="bottom" constant="20" id="LNU-hT-yh0"/>
+                                <constraint firstAttribute="trailing" secondItem="1Rh-NG-ekM" secondAttribute="trailing" constant="20" id="OZu-Uh-gaf"/>
                                 <constraint firstAttribute="bottom" secondItem="39z-8y-A1b" secondAttribute="bottom" constant="20" id="PAu-kl-e2t"/>
                                 <constraint firstItem="Iyt-Ll-6Cm" firstAttribute="leading" secondItem="jtT-0u-beP" secondAttribute="leading" constant="20" id="PYN-qO-ufl"/>
                                 <constraint firstItem="dar-cc-ybE" firstAttribute="top" secondItem="WtV-iJ-SRo" secondAttribute="bottom" constant="15" id="SO1-i3-BTQ"/>
                                 <constraint firstItem="cxY-HP-Lss" firstAttribute="leading" secondItem="jtT-0u-beP" secondAttribute="leading" constant="20" id="Sa1-Kr-Q1d"/>
-                                <constraint firstItem="39z-8y-A1b" firstAttribute="top" secondItem="cxY-HP-Lss" secondAttribute="bottom" constant="20" id="Wgl-Fx-ihM"/>
                                 <constraint firstAttribute="trailing" secondItem="RLE-Yc-ZNk" secondAttribute="trailing" id="aNZ-1F-h7g"/>
+                                <constraint firstItem="39z-8y-A1b" firstAttribute="top" secondItem="1Rh-NG-ekM" secondAttribute="bottom" constant="20" id="aw2-8R-GcC"/>
                                 <constraint firstItem="2Hz-1R-xZO" firstAttribute="top" secondItem="Iyt-Ll-6Cm" secondAttribute="bottom" constant="20" id="coq-8i-QWK"/>
                                 <constraint firstItem="RLE-Yc-ZNk" firstAttribute="leading" secondItem="jtT-0u-beP" secondAttribute="leading" id="ebB-dW-ge8"/>
                                 <constraint firstAttribute="trailing" secondItem="2Hz-1R-xZO" secondAttribute="trailing" constant="20" id="kjh-MH-VhY"/>

@@ -25,6 +25,8 @@
 @property (weak, nonatomic) IBOutlet UIButton *serveConfigButton;
 /// 无线投屏按钮
 @property (weak, nonatomic) IBOutlet UIButton *screenCastingButton;
+/// 网络检测按钮
+@property (weak, nonatomic) IBOutlet UIButton *speedTestButton;
 /// 电子画板按钮
 @property (weak, nonatomic) IBOutlet UIButton *drawingButton;
 /// 当前服务器地址
@@ -102,6 +104,13 @@
         @strongify(self);
         /// 跳转无线投屏页面
         [self push:@"FWScreenCastingViewController"];
+    }];
+    
+    /// 绑定网络检测按钮事件
+    [[self.speedTestButton rac_signalForControlEvents :UIControlEventTouchUpInside] subscribeNext:^(__kindof UIControl * _Nullable control) {
+        @strongify(self);
+        /// 跳转网络检测页面
+        [self push:@"FWSpeedTestViewController"];
     }];
     
     /// 绑定电子画板按钮事件

@@ -47,6 +47,19 @@
 		F47FD3A92BCE8201006579F2 /* FWCastingBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = F47FD3A72BCE8201006579F2 /* FWCastingBridge.m */; };
 		F47FD3AE2BCE99E1006579F2 /* FWRegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F47FD3AC2BCE99E1006579F2 /* FWRegisterViewController.m */; };
 		F47FD3AF2BCE99E1006579F2 /* FWRegisterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F47FD3AD2BCE99E1006579F2 /* FWRegisterViewController.xib */; };
+		F47FD3C52BCF6284006579F2 /* FWSpeedTestResultHeaderTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F47FD3B12BCF6284006579F2 /* FWSpeedTestResultHeaderTableViewCell.m */; };
+		F47FD3C62BCF6284006579F2 /* FWSpeedTestResultHeaderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F47FD3B22BCF6284006579F2 /* FWSpeedTestResultHeaderTableViewCell.xib */; };
+		F47FD3C72BCF6284006579F2 /* FWSpeedTestResultTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F47FD3B42BCF6284006579F2 /* FWSpeedTestResultTableViewCell.m */; };
+		F47FD3C82BCF6284006579F2 /* FWSpeedTestResultTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F47FD3B52BCF6284006579F2 /* FWSpeedTestResultTableViewCell.xib */; };
+		F47FD3C92BCF6284006579F2 /* FWSpeedTestRippleView.m in Sources */ = {isa = PBXBuildFile; fileRef = F47FD3B72BCF6284006579F2 /* FWSpeedTestRippleView.m */; };
+		F47FD3CA2BCF6284006579F2 /* FWSpeedTestSpeedCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F47FD3B92BCF6284006579F2 /* FWSpeedTestSpeedCollectionViewCell.m */; };
+		F47FD3CB2BCF6284006579F2 /* FWSpeedTestSpeedCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F47FD3BA2BCF6284006579F2 /* FWSpeedTestSpeedCollectionViewCell.xib */; };
+		F47FD3CC2BCF6284006579F2 /* FWSpeedTestSpeedTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F47FD3BC2BCF6284006579F2 /* FWSpeedTestSpeedTableViewCell.m */; };
+		F47FD3CD2BCF6284006579F2 /* FWSpeedTestSpeedTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F47FD3BD2BCF6284006579F2 /* FWSpeedTestSpeedTableViewCell.xib */; };
+		F47FD3CE2BCF6284006579F2 /* FWSpeedTestTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F47FD3BF2BCF6284006579F2 /* FWSpeedTestTableViewCell.m */; };
+		F47FD3CF2BCF6284006579F2 /* FWSpeedTestTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F47FD3C02BCF6284006579F2 /* FWSpeedTestTableViewCell.xib */; };
+		F47FD3D02BCF6284006579F2 /* FWSpeedTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F47FD3C22BCF6284006579F2 /* FWSpeedTestViewController.m */; };
+		F47FD3D12BCF6284006579F2 /* FWSpeedTestViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F47FD3C32BCF6284006579F2 /* FWSpeedTestViewController.xib */; };
 		F482EEF829B6D0F500815C9C /* FWBaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F482EEF729B6D0F500815C9C /* FWBaseModel.m */; };
 		F482EEFB29B6D15200815C9C /* FWNetworkBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = F482EEFA29B6D15200815C9C /* FWNetworkBridge.m */; };
 		F482EF0229B6DF9900815C9C /* FWToolBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = F482EF0129B6DF9900815C9C /* FWToolBridge.m */; };
@@ -187,6 +200,26 @@
 		F47FD3AB2BCE99E1006579F2 /* FWRegisterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FWRegisterViewController.h; sourceTree = "<group>"; };
 		F47FD3AC2BCE99E1006579F2 /* FWRegisterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FWRegisterViewController.m; sourceTree = "<group>"; };
 		F47FD3AD2BCE99E1006579F2 /* FWRegisterViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FWRegisterViewController.xib; sourceTree = "<group>"; };
+		F47FD3B02BCF6284006579F2 /* FWSpeedTestResultHeaderTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FWSpeedTestResultHeaderTableViewCell.h; sourceTree = "<group>"; };
+		F47FD3B12BCF6284006579F2 /* FWSpeedTestResultHeaderTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FWSpeedTestResultHeaderTableViewCell.m; sourceTree = "<group>"; };
+		F47FD3B22BCF6284006579F2 /* FWSpeedTestResultHeaderTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FWSpeedTestResultHeaderTableViewCell.xib; sourceTree = "<group>"; };
+		F47FD3B32BCF6284006579F2 /* FWSpeedTestResultTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FWSpeedTestResultTableViewCell.h; sourceTree = "<group>"; };
+		F47FD3B42BCF6284006579F2 /* FWSpeedTestResultTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FWSpeedTestResultTableViewCell.m; sourceTree = "<group>"; };
+		F47FD3B52BCF6284006579F2 /* FWSpeedTestResultTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FWSpeedTestResultTableViewCell.xib; sourceTree = "<group>"; };
+		F47FD3B62BCF6284006579F2 /* FWSpeedTestRippleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FWSpeedTestRippleView.h; sourceTree = "<group>"; };
+		F47FD3B72BCF6284006579F2 /* FWSpeedTestRippleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FWSpeedTestRippleView.m; sourceTree = "<group>"; };
+		F47FD3B82BCF6284006579F2 /* FWSpeedTestSpeedCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FWSpeedTestSpeedCollectionViewCell.h; sourceTree = "<group>"; };
+		F47FD3B92BCF6284006579F2 /* FWSpeedTestSpeedCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FWSpeedTestSpeedCollectionViewCell.m; sourceTree = "<group>"; };
+		F47FD3BA2BCF6284006579F2 /* FWSpeedTestSpeedCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FWSpeedTestSpeedCollectionViewCell.xib; sourceTree = "<group>"; };
+		F47FD3BB2BCF6284006579F2 /* FWSpeedTestSpeedTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FWSpeedTestSpeedTableViewCell.h; sourceTree = "<group>"; };
+		F47FD3BC2BCF6284006579F2 /* FWSpeedTestSpeedTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FWSpeedTestSpeedTableViewCell.m; sourceTree = "<group>"; };
+		F47FD3BD2BCF6284006579F2 /* FWSpeedTestSpeedTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FWSpeedTestSpeedTableViewCell.xib; sourceTree = "<group>"; };
+		F47FD3BE2BCF6284006579F2 /* FWSpeedTestTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FWSpeedTestTableViewCell.h; sourceTree = "<group>"; };
+		F47FD3BF2BCF6284006579F2 /* FWSpeedTestTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FWSpeedTestTableViewCell.m; sourceTree = "<group>"; };
+		F47FD3C02BCF6284006579F2 /* FWSpeedTestTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FWSpeedTestTableViewCell.xib; sourceTree = "<group>"; };
+		F47FD3C12BCF6284006579F2 /* FWSpeedTestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FWSpeedTestViewController.h; sourceTree = "<group>"; };
+		F47FD3C22BCF6284006579F2 /* FWSpeedTestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FWSpeedTestViewController.m; sourceTree = "<group>"; };
+		F47FD3C32BCF6284006579F2 /* FWSpeedTestViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FWSpeedTestViewController.xib; sourceTree = "<group>"; };
 		F482EEF629B6D0F500815C9C /* FWBaseModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FWBaseModel.h; sourceTree = "<group>"; };
 		F482EEF729B6D0F500815C9C /* FWBaseModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FWBaseModel.m; sourceTree = "<group>"; };
 		F482EEF929B6D15200815C9C /* FWNetworkBridge.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FWNetworkBridge.h; sourceTree = "<group>"; };
@@ -384,9 +417,10 @@
 				F43AD8502728EE690056B3EE /* Login */,
 				F47FD3AA2BCE99D2006579F2 /* Register */,
 				F47FD3972BCE7F6C006579F2 /* ServeConfig */,
-				F47FD3912BCE7EFA006579F2 /* Home */,
 				F47FD3A22BCE80F4006579F2 /* ScreenCasting */,
+				F47FD3C42BCF6284006579F2 /* SpeedTest */,
 				F47FD3862BCE7E35006579F2 /* Drawing */,
+				F47FD3912BCE7EFA006579F2 /* Home */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -533,6 +567,33 @@
 				F47FD3AD2BCE99E1006579F2 /* FWRegisterViewController.xib */,
 			);
 			path = Register;
+			sourceTree = "<group>";
+		};
+		F47FD3C42BCF6284006579F2 /* SpeedTest */ = {
+			isa = PBXGroup;
+			children = (
+				F47FD3C12BCF6284006579F2 /* FWSpeedTestViewController.h */,
+				F47FD3C22BCF6284006579F2 /* FWSpeedTestViewController.m */,
+				F47FD3C32BCF6284006579F2 /* FWSpeedTestViewController.xib */,
+				F47FD3BE2BCF6284006579F2 /* FWSpeedTestTableViewCell.h */,
+				F47FD3BF2BCF6284006579F2 /* FWSpeedTestTableViewCell.m */,
+				F47FD3C02BCF6284006579F2 /* FWSpeedTestTableViewCell.xib */,
+				F47FD3BB2BCF6284006579F2 /* FWSpeedTestSpeedTableViewCell.h */,
+				F47FD3BC2BCF6284006579F2 /* FWSpeedTestSpeedTableViewCell.m */,
+				F47FD3BD2BCF6284006579F2 /* FWSpeedTestSpeedTableViewCell.xib */,
+				F47FD3B82BCF6284006579F2 /* FWSpeedTestSpeedCollectionViewCell.h */,
+				F47FD3B92BCF6284006579F2 /* FWSpeedTestSpeedCollectionViewCell.m */,
+				F47FD3BA2BCF6284006579F2 /* FWSpeedTestSpeedCollectionViewCell.xib */,
+				F47FD3B32BCF6284006579F2 /* FWSpeedTestResultTableViewCell.h */,
+				F47FD3B42BCF6284006579F2 /* FWSpeedTestResultTableViewCell.m */,
+				F47FD3B52BCF6284006579F2 /* FWSpeedTestResultTableViewCell.xib */,
+				F47FD3B02BCF6284006579F2 /* FWSpeedTestResultHeaderTableViewCell.h */,
+				F47FD3B12BCF6284006579F2 /* FWSpeedTestResultHeaderTableViewCell.m */,
+				F47FD3B22BCF6284006579F2 /* FWSpeedTestResultHeaderTableViewCell.xib */,
+				F47FD3B62BCF6284006579F2 /* FWSpeedTestRippleView.h */,
+				F47FD3B72BCF6284006579F2 /* FWSpeedTestRippleView.m */,
+			);
+			path = SpeedTest;
 			sourceTree = "<group>";
 		};
 		F482EEF529B6CF1600815C9C /* NetworkBridge */ = {
@@ -687,13 +748,19 @@
 				F47FD3882BCE7E35006579F2 /* FWDrawingConfigViewController.xib in Resources */,
 				F43CDA9326C69EEE00FBB94D /* Home.xcassets in Resources */,
 				F4DA7C8B27279E62003FDE9B /* Common.xcassets in Resources */,
+				F47FD3CB2BCF6284006579F2 /* FWSpeedTestSpeedCollectionViewCell.xib in Resources */,
+				F47FD3CF2BCF6284006579F2 /* FWSpeedTestTableViewCell.xib in Resources */,
 				F47FD37C2BCE6F28006579F2 /* FWLoginViewController.xib in Resources */,
 				F47FD39C2BCE7FBC006579F2 /* FWServeConfigViewController.xib in Resources */,
+				F47FD3D12BCF6284006579F2 /* FWSpeedTestViewController.xib in Resources */,
+				F47FD3C62BCF6284006579F2 /* FWSpeedTestResultHeaderTableViewCell.xib in Resources */,
 				F47FD3932BCE7EFA006579F2 /* FWHomeTableViewCell.xib in Resources */,
 				F47FD3952BCE7EFA006579F2 /* FWHomeViewController.xib in Resources */,
 				F40B619D26C27D0C00F42370 /* AppIcon.xcassets in Resources */,
+				F47FD3CD2BCF6284006579F2 /* FWSpeedTestSpeedTableViewCell.xib in Resources */,
 				F47FD3AF2BCE99E1006579F2 /* FWRegisterViewController.xib in Resources */,
 				F40B61A126C27D0C00F42370 /* Launch.xcassets in Resources */,
+				F47FD3C82BCF6284006579F2 /* FWSpeedTestResultTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -850,20 +917,27 @@
 				F43AD83A2727EE670056B3EE /* FWConstants.m in Sources */,
 				F47FD3942BCE7EFA006579F2 /* FWHomeViewController.m in Sources */,
 				F482EF2A29BEE2D900815C9C /* FWEnum.m in Sources */,
+				F47FD3C52BCF6284006579F2 /* FWSpeedTestResultHeaderTableViewCell.m in Sources */,
 				F482EEFB29B6D15200815C9C /* FWNetworkBridge.m in Sources */,
 				F47FD39B2BCE7FBC006579F2 /* FWServeConfigViewController.m in Sources */,
 				F47FD3872BCE7E35006579F2 /* FWDrawingConfigViewController.m in Sources */,
 				F47FD3A92BCE8201006579F2 /* FWCastingBridge.m in Sources */,
 				F47FD3A52BCE80F4006579F2 /* FWScreenCastingViewModel.m in Sources */,
+				F47FD3C92BCF6284006579F2 /* FWSpeedTestRippleView.m in Sources */,
 				F482EEF829B6D0F500815C9C /* FWBaseModel.m in Sources */,
 				F4C417C029B1A85900A7EBCB /* FWTimerBridge.m in Sources */,
 				F482EF3429C4187F00815C9C /* NSString+Extension.m in Sources */,
 				F4219D5529ADD78E0069483A /* UIView+Extension.m in Sources */,
 				F47FD37B2BCE6F28006579F2 /* FWLoginViewController.m in Sources */,
 				F47FD3892BCE7E35006579F2 /* FWDrawingViewController.m in Sources */,
+				F47FD3CA2BCF6284006579F2 /* FWSpeedTestSpeedCollectionViewCell.m in Sources */,
 				F4219D5229ADD2530069483A /* FWDateBridge.m in Sources */,
+				F47FD3CC2BCF6284006579F2 /* FWSpeedTestSpeedTableViewCell.m in Sources */,
 				F47FD3A32BCE80F4006579F2 /* FWScreenCastingViewController.m in Sources */,
+				F47FD3C72BCF6284006579F2 /* FWSpeedTestResultTableViewCell.m in Sources */,
+				F47FD3CE2BCF6284006579F2 /* FWSpeedTestTableViewCell.m in Sources */,
 				F40B633C26C27D0D00F42370 /* FWBaseNavigationViewController.m in Sources */,
+				F47FD3D02BCF6284006579F2 /* FWSpeedTestViewController.m in Sources */,
 				F47FD3922BCE7EFA006579F2 /* FWHomeTableViewCell.m in Sources */,
 				F40B61A526C27D0C00F42370 /* FWAppDelegate.m in Sources */,
 				F482EF2E29BF286A00815C9C /* FWLogTraceBridge.m in Sources */,
