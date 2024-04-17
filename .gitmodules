@@ -1,9 +1,0 @@
-[submodule "Depend/VCSMediaKit"]
-	path = Depend/VCSMediaKit
-	url = https://code.zaoing.com/meeting/VCSMediaKit.git
-[submodule "Depend/VCSMeetLink"]
-	path = Depend/VCSMeetLink
-	url = https://code.zaoing.com/meeting/VCSMeetLink.git
-[submodule "Depend/VCSWhiteBoardKit"]
-	path = Depend/VCSWhiteBoardKit
-	url = https://code.zaoing.com/meeting/VCSWhiteBoardKit.git

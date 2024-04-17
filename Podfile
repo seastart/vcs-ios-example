@@ -22,6 +22,8 @@ def commonPods
     pod 'MLeaksFinder'
     # 数据模型
     pod 'YYModel'
+    # 界面布局组件
+    pod 'MyLayout'
 end
 
 def vcsmodulePods
@@ -31,15 +33,11 @@ def vcsmodulePods
   pod 'VCSMeetLink'
   # 电子画板组件
   pod 'VCSWhiteBoardKit'
-  # 本地依赖RTCEngineKit
-  # pod 'RTCEngineKit', :path => '../Depend/RTCEngineKit/'
-  # SDK远程依赖
-  # pod 'RTCEngineKit'
 end
 
 target 'VCSModuleExample' do
-    commonPods
-    vcsmodulePods
+  commonPods
+  vcsmodulePods
 end
 
 target 'VCSReplayBroadcastUpload' do

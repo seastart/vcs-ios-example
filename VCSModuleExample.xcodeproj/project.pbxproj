@@ -17,7 +17,6 @@
 		F40B633C26C27D0D00F42370 /* FWBaseNavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F40B618726C27D0C00F42370 /* FWBaseNavigationViewController.m */; };
 		F40B633F26C2901F00F42370 /* VCSModuleExample-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F40B633E26C2901F00F42370 /* VCSModuleExample-Info.plist */; };
 		F40B634326C292DB00F42370 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F40B634126C292C000F42370 /* LaunchScreen.storyboard */; };
-		F4219D2229AC88510069483A /* Login.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F4219D2129AC88510069483A /* Login.xcassets */; };
 		F4219D2C29AD988C0069483A /* CALayer+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = F4219D2B29AD988C0069483A /* CALayer+Extension.m */; };
 		F4219D3829ADABAB0069483A /* UIScrollView+AutoHeight.m in Sources */ = {isa = PBXBuildFile; fileRef = F4219D3529ADABAB0069483A /* UIScrollView+AutoHeight.m */; };
 		F4219D3929ADABAB0069483A /* UITextView+AutoHeight.m in Sources */ = {isa = PBXBuildFile; fileRef = F4219D3629ADABAB0069483A /* UITextView+AutoHeight.m */; };
@@ -25,7 +24,6 @@
 		F4219D5529ADD78E0069483A /* UIView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = F4219D5429ADD78E0069483A /* UIView+Extension.m */; };
 		F43AD83A2727EE670056B3EE /* FWConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = F43AD8392727EE670056B3EE /* FWConstants.m */; };
 		F43AD8592728EF4D0056B3EE /* FWEntryBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = F43AD8582728EF4D0056B3EE /* FWEntryBridge.m */; };
-		F43CDA9326C69EEE00FBB94D /* Home.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F43CDA9226C69EEE00FBB94D /* Home.xcassets */; };
 		F45C830C27D6F50D008EEA31 /* Room.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F45C830B27D6F50D008EEA31 /* Room.xcassets */; };
 		F47FD37B2BCE6F28006579F2 /* FWLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F47FD3792BCE6F28006579F2 /* FWLoginViewController.m */; };
 		F47FD37C2BCE6F28006579F2 /* FWLoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F47FD37A2BCE6F28006579F2 /* FWLoginViewController.xib */; };
@@ -61,6 +59,14 @@
 		F47FD3D82BCF79E2006579F2 /* FWRoomCallViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F47FD3D52BCF79E2006579F2 /* FWRoomCallViewController.xib */; };
 		F47FD3DC2BCF8AAA006579F2 /* FWIPAddressBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = F47FD3DB2BCF8AAA006579F2 /* FWIPAddressBridge.m */; };
 		F47FD3DF2BCF8AB7006579F2 /* FWIPAddressConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = F47FD3DE2BCF8AB7006579F2 /* FWIPAddressConfig.m */; };
+		F47FD3E22BCF8DF1006579F2 /* audio_background_task.wav in Resources */ = {isa = PBXBuildFile; fileRef = F47FD3E02BCF8DF1006579F2 /* audio_background_task.wav */; };
+		F47FD3F42BCFA5EA006579F2 /* FWMeetingRoomMemberView.m in Sources */ = {isa = PBXBuildFile; fileRef = F47FD3E72BCFA5E9006579F2 /* FWMeetingRoomMemberView.m */; };
+		F47FD3F52BCFA5EA006579F2 /* FWMeetingRoomMemberView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F47FD3E82BCFA5E9006579F2 /* FWMeetingRoomMemberView.xib */; };
+		F47FD3F62BCFA5EA006579F2 /* FWMeetingRoomMemberWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = F47FD3EA2BCFA5E9006579F2 /* FWMeetingRoomMemberWindow.m */; };
+		F47FD3F72BCFA5EA006579F2 /* FWMeetingRoomMemberWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = F47FD3EB2BCFA5E9006579F2 /* FWMeetingRoomMemberWindow.xib */; };
+		F47FD3F82BCFA5EA006579F2 /* FWMeetingRoomModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F47FD3ED2BCFA5E9006579F2 /* FWMeetingRoomModel.m */; };
+		F47FD3F92BCFA5EA006579F2 /* FWMeetingRoomViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F47FD3EF2BCFA5E9006579F2 /* FWMeetingRoomViewController.m */; };
+		F47FD3FA2BCFA5EA006579F2 /* FWMeetingRoomViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F47FD3F02BCFA5E9006579F2 /* FWMeetingRoomViewController.xib */; };
 		F482EEF829B6D0F500815C9C /* FWBaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F482EEF729B6D0F500815C9C /* FWBaseModel.m */; };
 		F482EEFB29B6D15200815C9C /* FWNetworkBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = F482EEFA29B6D15200815C9C /* FWNetworkBridge.m */; };
 		F482EF0229B6DF9900815C9C /* FWToolBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = F482EF0129B6DF9900815C9C /* FWToolBridge.m */; };
@@ -151,7 +157,6 @@
 		F40B633E26C2901F00F42370 /* VCSModuleExample-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "VCSModuleExample-Info.plist"; sourceTree = "<group>"; };
 		F40B634026C2905500F42370 /* VCSModuleExample-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "VCSModuleExample-Prefix.pch"; sourceTree = "<group>"; };
 		F40B634126C292C000F42370 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
-		F4219D2129AC88510069483A /* Login.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Login.xcassets; sourceTree = "<group>"; };
 		F4219D2A29AD988C0069483A /* CALayer+Extension.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CALayer+Extension.h"; sourceTree = "<group>"; };
 		F4219D2B29AD988C0069483A /* CALayer+Extension.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "CALayer+Extension.m"; sourceTree = "<group>"; };
 		F4219D3429ADABAB0069483A /* UITextView+AutoHeight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextView+AutoHeight.h"; sourceTree = "<group>"; };
@@ -168,7 +173,6 @@
 		F43AD8392727EE670056B3EE /* FWConstants.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FWConstants.m; sourceTree = "<group>"; };
 		F43AD8572728EF4D0056B3EE /* FWEntryBridge.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FWEntryBridge.h; sourceTree = "<group>"; };
 		F43AD8582728EF4D0056B3EE /* FWEntryBridge.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FWEntryBridge.m; sourceTree = "<group>"; };
-		F43CDA9226C69EEE00FBB94D /* Home.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Home.xcassets; sourceTree = "<group>"; };
 		F45C830B27D6F50D008EEA31 /* Room.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Room.xcassets; sourceTree = "<group>"; };
 		F47FD3782BCE6F28006579F2 /* FWLoginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FWLoginViewController.h; sourceTree = "<group>"; };
 		F47FD3792BCE6F28006579F2 /* FWLoginViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FWLoginViewController.m; sourceTree = "<group>"; };
@@ -224,6 +228,18 @@
 		F47FD3DB2BCF8AAA006579F2 /* FWIPAddressBridge.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FWIPAddressBridge.m; sourceTree = "<group>"; };
 		F47FD3DD2BCF8AB7006579F2 /* FWIPAddressConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FWIPAddressConfig.h; sourceTree = "<group>"; };
 		F47FD3DE2BCF8AB7006579F2 /* FWIPAddressConfig.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FWIPAddressConfig.m; sourceTree = "<group>"; };
+		F47FD3E02BCF8DF1006579F2 /* audio_background_task.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = audio_background_task.wav; sourceTree = "<group>"; };
+		F47FD3E62BCFA5E9006579F2 /* FWMeetingRoomMemberView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FWMeetingRoomMemberView.h; sourceTree = "<group>"; };
+		F47FD3E72BCFA5E9006579F2 /* FWMeetingRoomMemberView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FWMeetingRoomMemberView.m; sourceTree = "<group>"; };
+		F47FD3E82BCFA5E9006579F2 /* FWMeetingRoomMemberView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FWMeetingRoomMemberView.xib; sourceTree = "<group>"; };
+		F47FD3E92BCFA5E9006579F2 /* FWMeetingRoomMemberWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FWMeetingRoomMemberWindow.h; sourceTree = "<group>"; };
+		F47FD3EA2BCFA5E9006579F2 /* FWMeetingRoomMemberWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FWMeetingRoomMemberWindow.m; sourceTree = "<group>"; };
+		F47FD3EB2BCFA5E9006579F2 /* FWMeetingRoomMemberWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FWMeetingRoomMemberWindow.xib; sourceTree = "<group>"; };
+		F47FD3EC2BCFA5E9006579F2 /* FWMeetingRoomModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FWMeetingRoomModel.h; sourceTree = "<group>"; };
+		F47FD3ED2BCFA5E9006579F2 /* FWMeetingRoomModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FWMeetingRoomModel.m; sourceTree = "<group>"; };
+		F47FD3EE2BCFA5E9006579F2 /* FWMeetingRoomViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FWMeetingRoomViewController.h; sourceTree = "<group>"; };
+		F47FD3EF2BCFA5E9006579F2 /* FWMeetingRoomViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FWMeetingRoomViewController.m; sourceTree = "<group>"; };
+		F47FD3F02BCFA5E9006579F2 /* FWMeetingRoomViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FWMeetingRoomViewController.xib; sourceTree = "<group>"; };
 		F482EEF629B6D0F500815C9C /* FWBaseModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FWBaseModel.h; sourceTree = "<group>"; };
 		F482EEF729B6D0F500815C9C /* FWBaseModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FWBaseModel.m; sourceTree = "<group>"; };
 		F482EEF929B6D15200815C9C /* FWNetworkBridge.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FWNetworkBridge.h; sourceTree = "<group>"; };
@@ -330,6 +346,7 @@
 		F40B5D0626C27D0A00F42370 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				F47FD3E12BCF8DF1006579F2 /* Sounds */,
 				F40B5D2526C27D0A00F42370 /* Assets */,
 				F40B633E26C2901F00F42370 /* VCSModuleExample-Info.plist */,
 				F40B634126C292C000F42370 /* LaunchScreen.storyboard */,
@@ -343,8 +360,6 @@
 			isa = PBXGroup;
 			children = (
 				F40B5D2A26C27D0A00F42370 /* AppIcon.xcassets */,
-				F4219D2129AC88510069483A /* Login.xcassets */,
-				F43CDA9226C69EEE00FBB94D /* Home.xcassets */,
 				F4DA7C8A27279E62003FDE9B /* Common.xcassets */,
 				F45C830B27D6F50D008EEA31 /* Room.xcassets */,
 			);
@@ -426,6 +441,7 @@
 				F47FD3862BCE7E35006579F2 /* Drawing */,
 				F47FD3912BCE7EFA006579F2 /* Home */,
 				F47FD3D62BCF79E2006579F2 /* RoomCall */,
+				F47FD3F12BCFA5E9006579F2 /* MeetingRoom */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -619,6 +635,32 @@
 			path = IPAddressBridge;
 			sourceTree = "<group>";
 		};
+		F47FD3E12BCF8DF1006579F2 /* Sounds */ = {
+			isa = PBXGroup;
+			children = (
+				F47FD3E02BCF8DF1006579F2 /* audio_background_task.wav */,
+			);
+			path = Sounds;
+			sourceTree = "<group>";
+		};
+		F47FD3F12BCFA5E9006579F2 /* MeetingRoom */ = {
+			isa = PBXGroup;
+			children = (
+				F47FD3EE2BCFA5E9006579F2 /* FWMeetingRoomViewController.h */,
+				F47FD3EF2BCFA5E9006579F2 /* FWMeetingRoomViewController.m */,
+				F47FD3F02BCFA5E9006579F2 /* FWMeetingRoomViewController.xib */,
+				F47FD3E62BCFA5E9006579F2 /* FWMeetingRoomMemberView.h */,
+				F47FD3E72BCFA5E9006579F2 /* FWMeetingRoomMemberView.m */,
+				F47FD3E82BCFA5E9006579F2 /* FWMeetingRoomMemberView.xib */,
+				F47FD3E92BCFA5E9006579F2 /* FWMeetingRoomMemberWindow.h */,
+				F47FD3EA2BCFA5E9006579F2 /* FWMeetingRoomMemberWindow.m */,
+				F47FD3EB2BCFA5E9006579F2 /* FWMeetingRoomMemberWindow.xib */,
+				F47FD3EC2BCFA5E9006579F2 /* FWMeetingRoomModel.h */,
+				F47FD3ED2BCFA5E9006579F2 /* FWMeetingRoomModel.m */,
+			);
+			path = MeetingRoom;
+			sourceTree = "<group>";
+		};
 		F482EEF529B6CF1600815C9C /* NetworkBridge */ = {
 			isa = PBXGroup;
 			children = (
@@ -764,19 +806,21 @@
 			files = (
 				F47FD3A42BCE80F4006579F2 /* FWScreenCastingViewController.xib in Resources */,
 				F40B634326C292DB00F42370 /* LaunchScreen.storyboard in Resources */,
-				F4219D2229AC88510069483A /* Login.xcassets in Resources */,
+				F47FD3FA2BCFA5EA006579F2 /* FWMeetingRoomViewController.xib in Resources */,
 				F40B633F26C2901F00F42370 /* VCSModuleExample-Info.plist in Resources */,
 				F45C830C27D6F50D008EEA31 /* Room.xcassets in Resources */,
+				F47FD3E22BCF8DF1006579F2 /* audio_background_task.wav in Resources */,
 				F47FD3D82BCF79E2006579F2 /* FWRoomCallViewController.xib in Resources */,
+				F47FD3F52BCFA5EA006579F2 /* FWMeetingRoomMemberView.xib in Resources */,
 				F47FD38A2BCE7E35006579F2 /* FWDrawingViewController.xib in Resources */,
 				F47FD3882BCE7E35006579F2 /* FWDrawingConfigViewController.xib in Resources */,
-				F43CDA9326C69EEE00FBB94D /* Home.xcassets in Resources */,
 				F4DA7C8B27279E62003FDE9B /* Common.xcassets in Resources */,
 				F47FD3CB2BCF6284006579F2 /* FWSpeedTestSpeedCollectionViewCell.xib in Resources */,
 				F47FD3CF2BCF6284006579F2 /* FWSpeedTestTableViewCell.xib in Resources */,
 				F47FD37C2BCE6F28006579F2 /* FWLoginViewController.xib in Resources */,
 				F47FD39C2BCE7FBC006579F2 /* FWServeConfigViewController.xib in Resources */,
 				F47FD3D12BCF6284006579F2 /* FWSpeedTestViewController.xib in Resources */,
+				F47FD3F72BCFA5EA006579F2 /* FWMeetingRoomMemberWindow.xib in Resources */,
 				F47FD3C62BCF6284006579F2 /* FWSpeedTestResultHeaderTableViewCell.xib in Resources */,
 				F47FD3952BCE7EFA006579F2 /* FWHomeViewController.xib in Resources */,
 				F40B619D26C27D0C00F42370 /* AppIcon.xcassets in Resources */,
@@ -810,6 +854,7 @@
 				"${BUILT_PRODUCTS_DIR}/MLeaksFinder/MLeaksFinder.framework",
 				"${BUILT_PRODUCTS_DIR}/MMKV/MMKV.framework",
 				"${BUILT_PRODUCTS_DIR}/MMKVCore/MMKVCore.framework",
+				"${BUILT_PRODUCTS_DIR}/MyLayout/MyLayout.framework",
 				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
 				"${BUILT_PRODUCTS_DIR}/ReactiveObjC/ReactiveObjC.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
@@ -827,6 +872,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MLeaksFinder.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MMKV.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MMKVCore.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MyLayout.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ReactiveObjC.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
@@ -937,6 +983,7 @@
 				F4219D2C29AD988C0069483A /* CALayer+Extension.m in Sources */,
 				F40B633B26C27D0D00F42370 /* FWBaseViewController.m in Sources */,
 				F43AD83A2727EE670056B3EE /* FWConstants.m in Sources */,
+				F47FD3F92BCFA5EA006579F2 /* FWMeetingRoomViewController.m in Sources */,
 				F47FD3942BCE7EFA006579F2 /* FWHomeViewController.m in Sources */,
 				F482EF2A29BEE2D900815C9C /* FWEnum.m in Sources */,
 				F47FD3C52BCF6284006579F2 /* FWSpeedTestResultHeaderTableViewCell.m in Sources */,
@@ -948,10 +995,12 @@
 				F47FD3C92BCF6284006579F2 /* FWSpeedTestRippleView.m in Sources */,
 				F482EEF829B6D0F500815C9C /* FWBaseModel.m in Sources */,
 				F4C417C029B1A85900A7EBCB /* FWTimerBridge.m in Sources */,
+				F47FD3F62BCFA5EA006579F2 /* FWMeetingRoomMemberWindow.m in Sources */,
 				F482EF3429C4187F00815C9C /* NSString+Extension.m in Sources */,
 				F4219D5529ADD78E0069483A /* UIView+Extension.m in Sources */,
 				F47FD3DC2BCF8AAA006579F2 /* FWIPAddressBridge.m in Sources */,
 				F47FD37B2BCE6F28006579F2 /* FWLoginViewController.m in Sources */,
+				F47FD3F42BCFA5EA006579F2 /* FWMeetingRoomMemberView.m in Sources */,
 				F47FD3892BCE7E35006579F2 /* FWDrawingViewController.m in Sources */,
 				F47FD3CA2BCF6284006579F2 /* FWSpeedTestSpeedCollectionViewCell.m in Sources */,
 				F47FD3D72BCF79E2006579F2 /* FWRoomCallViewController.m in Sources */,
@@ -965,6 +1014,7 @@
 				F40B61A526C27D0C00F42370 /* FWAppDelegate.m in Sources */,
 				F482EF2E29BF286A00815C9C /* FWLogTraceBridge.m in Sources */,
 				F4219D3929ADABAB0069483A /* UITextView+AutoHeight.m in Sources */,
+				F47FD3F82BCFA5EA006579F2 /* FWMeetingRoomModel.m in Sources */,
 				F47FD3DF2BCF8AB7006579F2 /* FWIPAddressConfig.m in Sources */,
 				F47FD3AE2BCE99E1006579F2 /* FWRegisterViewController.m in Sources */,
 				F482EF0229B6DF9900815C9C /* FWToolBridge.m in Sources */,
