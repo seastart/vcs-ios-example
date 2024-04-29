@@ -38,38 +38,6 @@ FOUNDATION_EXTERN NSString *__nonnull const FWUSERENTERROOMINTERFACE;
 /// 离开房间接口
 FOUNDATION_EXTERN NSString *__nonnull const FWUSEREXITROOMINTERFACE;
 
-#pragma mark - 服务器地址(风远)
-/// 线上环境(默认)
-FOUNDATION_EXTERN NSString *__nonnull const FWDEFAULTSERVICEURI;
-/// 预发布环境
-FOUNDATION_EXTERN NSString *__nonnull const FWUATSERVICEURI;
-/// 公网开发环境
-FOUNDATION_EXTERN NSString *__nonnull const FWDEVSERVICEURI;
-/// Anyconf环境
-FOUNDATION_EXTERN NSString *__nonnull const FWANYCONFSERVICEURI;
-/// 集成测试环境
-FOUNDATION_EXTERN NSString *__nonnull const FWQASERVICEURI;
-/// 压测环境
-FOUNDATION_EXTERN NSString *__nonnull const FWPETSERVICEURI;
-/// 开发环境1
-FOUNDATION_EXTERN NSString *__nonnull const FWLOCAL1SERVICEURI;
-
-#pragma mark - 服务器地址(萤石)
-/// 线上环境
-FOUNDATION_EXTERN NSString *__nonnull const FWDEFAULTSERVICEEZMURI;
-/// 测试环境
-FOUNDATION_EXTERN NSString *__nonnull const FWTESTSERVICEEZMURI;
-/// 演示环境
-FOUNDATION_EXTERN NSString *__nonnull const FWDEMOSERVICEEZMURI;
-/// 百人环境
-FOUNDATION_EXTERN NSString *__nonnull const FWOPTIMIZESERVICEEZMURI;
-/// 本地环境
-FOUNDATION_EXTERN NSString *__nonnull const FWLOCALSERVICEEZMURI;
-/// 开发环境
-FOUNDATION_EXTERN NSString *__nonnull const FWDEVSERVICEEZMURI;
-/// PB环境
-FOUNDATION_EXTERN NSString *__nonnull const FWPBSERVICEEZMURI;
-
 /// Application Group Identifier
 FOUNDATION_EXTERN NSString *__nonnull const FWAPPGROUP;
 

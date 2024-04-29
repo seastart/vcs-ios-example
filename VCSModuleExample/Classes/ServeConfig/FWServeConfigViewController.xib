@@ -11,7 +11,6 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FWServeConfigViewController">
             <connections>
                 <outlet property="saveServerButton" destination="Lbz-lk-UwW" id="kXv-vv-hAQ"/>
-                <outlet property="selectServerButton" destination="0ZN-r0-Zhg" id="xlR-1n-qXX"/>
                 <outlet property="serverTextField" destination="iic-yD-z0p" id="TYa-S6-mHv"/>
                 <outlet property="view" destination="hPK-Ds-0FL" id="XM9-MB-mGw"/>
             </connections>
@@ -25,7 +24,7 @@
                     <rect key="frame" x="0.0" y="59" width="393" height="759"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tZW-Mh-b3K">
-                            <rect key="frame" x="0.0" y="0.0" width="393" height="226"/>
+                            <rect key="frame" x="0.0" y="0.0" width="393" height="158"/>
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IUw-EG-Z9I">
                                     <rect key="frame" x="0.0" y="0.0" width="393" height="70"/>
@@ -100,26 +99,8 @@
                                         <constraint firstItem="fcD-Ad-MAJ" firstAttribute="leading" secondItem="IUw-EG-Z9I" secondAttribute="leading" id="tig-PK-jWO"/>
                                     </constraints>
                                 </view>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0ZN-r0-Zhg">
-                                    <rect key="frame" x="20" y="90" width="353" height="48"/>
-                                    <color key="backgroundColor" red="0.0" green="0.22352941179999999" blue="0.70196078429999997" alpha="1" colorSpace="calibratedRGB"/>
-                                    <constraints>
-                                        <constraint firstAttribute="height" constant="48" id="lqQ-Tu-5yd"/>
-                                    </constraints>
-                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                    <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    <state key="normal" title="服务器列表">
-                                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    </state>
-                                    <userDefinedRuntimeAttributes>
-                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                            <integer key="value" value="4"/>
-                                        </userDefinedRuntimeAttribute>
-                                        <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
-                                    </userDefinedRuntimeAttributes>
-                                </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lbz-lk-UwW">
-                                    <rect key="frame" x="20" y="158" width="353" height="48"/>
+                                    <rect key="frame" x="20" y="90" width="353" height="48"/>
                                     <color key="backgroundColor" red="0.0" green="0.22352941179999999" blue="0.70196078429999997" alpha="1" colorSpace="calibratedRGB"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="48" id="jzC-95-cQI"/>
@@ -139,16 +120,13 @@
                             </subviews>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
-                                <constraint firstItem="0ZN-r0-Zhg" firstAttribute="leading" secondItem="tZW-Mh-b3K" secondAttribute="leading" constant="20" id="5ol-pu-UjA"/>
-                                <constraint firstAttribute="trailing" secondItem="0ZN-r0-Zhg" secondAttribute="trailing" constant="20" id="Fhn-qQ-Kzs"/>
+                                <constraint firstItem="Lbz-lk-UwW" firstAttribute="top" secondItem="IUw-EG-Z9I" secondAttribute="bottom" constant="20" id="2bj-Aw-uWd"/>
                                 <constraint firstAttribute="bottom" secondItem="Lbz-lk-UwW" secondAttribute="bottom" constant="20" id="HHX-iw-b6F"/>
                                 <constraint firstAttribute="trailing" secondItem="Lbz-lk-UwW" secondAttribute="trailing" constant="20" id="YBi-E2-eAs"/>
-                                <constraint firstItem="Lbz-lk-UwW" firstAttribute="top" secondItem="0ZN-r0-Zhg" secondAttribute="bottom" constant="20" id="cdH-zL-CAG"/>
                                 <constraint firstItem="Lbz-lk-UwW" firstAttribute="leading" secondItem="tZW-Mh-b3K" secondAttribute="leading" constant="20" id="csX-q2-lZ6"/>
                                 <constraint firstItem="IUw-EG-Z9I" firstAttribute="top" secondItem="tZW-Mh-b3K" secondAttribute="top" id="daN-WM-AZE"/>
                                 <constraint firstItem="IUw-EG-Z9I" firstAttribute="leading" secondItem="tZW-Mh-b3K" secondAttribute="leading" id="idX-zc-3ey"/>
                                 <constraint firstAttribute="trailing" secondItem="IUw-EG-Z9I" secondAttribute="trailing" id="krl-9O-DnE"/>
-                                <constraint firstItem="0ZN-r0-Zhg" firstAttribute="top" secondItem="IUw-EG-Z9I" secondAttribute="bottom" constant="20" id="pFt-Ci-F0F"/>
                             </constraints>
                         </view>
                     </subviews>
