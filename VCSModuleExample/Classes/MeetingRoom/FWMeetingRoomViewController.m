@@ -637,8 +637,6 @@
     BOOL audioState = self.roomModel.controlModel.audioState;
     /// 获取视频状态
     BOOL videoState = self.roomModel.controlModel.videoState;
-    /// 设置音频路由
-    [[VCSStreamMedia sharedInstance] setAudioRoute:VCSAudioRouteSpeaker];
     /// 检测摄像头权限
     [FWToolBridge requestAuthorization:FWPermissionsStateVideo superVC:[FWEntryBridge sharedManager].appDelegate.window.rootViewController result:^(BOOL status) {
         /// 设置推流状态
@@ -777,11 +775,13 @@
 /// 音频路由变更回调
 /// @param stream 流媒体组件实例
 /// @param route 音频路由
+/// @param routeName 音频路由名称
 /// @param previousRoute 变更前的音频路由
-- (void)streamMedia:(VCSStreamMedia *)stream onAudioRouteChanged:(VCSAudioRoute)route previousRoute:(VCSAudioRoute)previousRoute {
+/// @param previousRouteName 变更前的音频路由名称
+- (void)streamMedia:(VCSStreamMedia *)stream onAudioRouteChanged:(VCSAudioRoute)route routeName:(NSString *)routeName previousRoute:(VCSAudioRoute)previousRoute previousRouteName:(NSString *)previousRouteName {
     
     /// 埋点日志
-    SGLOG(@"当前音频路由 route = %ld，previousRoute = %ld", route, previousRoute);
+    SGLOG(@"当前音频路由 route = %ld，routeName = %@，previousRoute = %ld，previousRouteName = %@", route, routeName, previousRoute, previousRouteName);
 }
 
 

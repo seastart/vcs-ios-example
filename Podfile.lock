@@ -23,18 +23,18 @@ PODS:
     - MMKVCore (~> 1.2.16)
   - MMKVCore (1.2.16)
   - MyLayout (1.9.10)
-  - Protobuf (3.26.1)
+  - Protobuf (3.28.0)
   - ReactiveObjC (3.1.1)
   - SDWebImage (5.15.0):
     - SDWebImage/Core (= 5.15.0)
   - SDWebImage/Core (5.15.0)
   - SSZipArchive (2.4.3)
-  - VCSMediaKit (1.0.0):
+  - VCSMediaKit (1.0.4):
     - AFNetworking (>= 4.0.0)
     - CocoaAsyncSocket
     - MMKV
     - SSZipArchive
-  - VCSMeetLink (1.0.0):
+  - VCSMeetLink (1.0.2):
     - Protobuf
   - VCSWhiteBoardKit (1.0.1):
     - Protobuf
@@ -46,9 +46,9 @@ DEPENDENCIES:
   - MyLayout
   - ReactiveObjC
   - SDWebImage
-  - VCSMediaKit
-  - VCSMeetLink
-  - VCSWhiteBoardKit
+  - VCSMediaKit (from `https://github.com/seastart/vcs-mediakit-ios-cocoapods.git`)
+  - VCSMeetLink (from `https://github.com/seastart/vcs-meetlink-ios-cocoapods.git`)
+  - VCSWhiteBoardKit (from `https://github.com/seastart/whiteboardkit-ios-cocoapods.git`)
   - YYModel
 
 SPEC REPOS:
@@ -65,10 +65,26 @@ SPEC REPOS:
     - ReactiveObjC
     - SDWebImage
     - SSZipArchive
-    - VCSMediaKit
-    - VCSMeetLink
-    - VCSWhiteBoardKit
     - YYModel
+
+EXTERNAL SOURCES:
+  VCSMediaKit:
+    :git: https://github.com/seastart/vcs-mediakit-ios-cocoapods.git
+  VCSMeetLink:
+    :git: https://github.com/seastart/vcs-meetlink-ios-cocoapods.git
+  VCSWhiteBoardKit:
+    :git: https://github.com/seastart/whiteboardkit-ios-cocoapods.git
+
+CHECKOUT OPTIONS:
+  VCSMediaKit:
+    :commit: 26dec9f29cec9850ec77d9954e2e6fac934e08f6
+    :git: https://github.com/seastart/vcs-mediakit-ios-cocoapods.git
+  VCSMeetLink:
+    :commit: b44d7c8268dde6ffb4a313d06170caa74059ca4a
+    :git: https://github.com/seastart/vcs-meetlink-ios-cocoapods.git
+  VCSWhiteBoardKit:
+    :commit: 6eb575e9e6e7f0660b4c503824545b5de3bcc4a9
+    :git: https://github.com/seastart/whiteboardkit-ios-cocoapods.git
 
 SPEC CHECKSUMS:
   AFNetworking: 3bd23d814e976cd148d7d44c3ab78017b744cd58
@@ -79,15 +95,15 @@ SPEC CHECKSUMS:
   MMKV: 784471ce430a2e2d16afef9053d63fab1b357d9e
   MMKVCore: 9cfef4c48c6c46f66226fc2e4634d78490206a48
   MyLayout: 39ee012bd780936c973bdc5d8ce0f84e3de489d7
-  Protobuf: a53f5173a603075b3522a5c50be63a67a5f3353a
+  Protobuf: 9f10df3b9b31e47a98789ea4d2f12bb9f84de2ad
   ReactiveObjC: 011caa393aa0383245f2dcf9bf02e86b80b36040
   SDWebImage: 9bec4c5cdd9579e1f57104735ee0c37df274d593
   SSZipArchive: fe6a26b2a54d5a0890f2567b5cc6de5caa600aef
-  VCSMediaKit: f42dfb104869b9f4b36e57ec581d7ebd8e9bb56b
-  VCSMeetLink: 06d34267955a2db207efbf5c480ef014f04257e8
+  VCSMediaKit: 4dfff9ea5e55b65435689adcb07f7b3b74404c42
+  VCSMeetLink: dd7c4e4f61a7034e64f48307748260c4f8a0dde7
   VCSWhiteBoardKit: 5b113d3eca6a6b93447662e54ccf2736e1f28ae7
   YYModel: 2a7fdd96aaa4b86a824e26d0c517de8928c04b30
 
-PODFILE CHECKSUM: a3d734a0396539491fae7e69a6c134c55c930aea
+PODFILE CHECKSUM: 0732f8a0b0b25c5cae26aaf4707a88c6608b2f46
 
 COCOAPODS: 1.12.1

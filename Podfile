@@ -28,11 +28,11 @@ end
 
 def vcsmodulePods
   # 流媒体组件
-  pod 'VCSMediaKit'
+  pod 'VCSMediaKit', :git => "https://github.com/seastart/vcs-mediakit-ios-cocoapods.git"
   # 会控组件
-  pod 'VCSMeetLink'
+  pod 'VCSMeetLink', :git => "https://github.com/seastart/vcs-meetlink-ios-cocoapods.git"
   # 电子画板组件
-  pod 'VCSWhiteBoardKit'
+  pod 'VCSWhiteBoardKit', :git => "https://github.com/seastart/whiteboardkit-ios-cocoapods.git"
 end
 
 target 'VCSModuleExample' do
