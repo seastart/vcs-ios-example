@@ -34,7 +34,7 @@ PODS:
     - CocoaAsyncSocket
     - MMKV
     - SSZipArchive
-  - VCSMeetLink (1.0.2):
+  - VCSMeetLink (1.0.3):
     - Protobuf
   - VCSWhiteBoardKit (1.0.1):
     - Protobuf
@@ -80,7 +80,7 @@ CHECKOUT OPTIONS:
     :commit: 26dec9f29cec9850ec77d9954e2e6fac934e08f6
     :git: https://github.com/seastart/vcs-mediakit-ios-cocoapods.git
   VCSMeetLink:
-    :commit: b44d7c8268dde6ffb4a313d06170caa74059ca4a
+    :commit: fcf5915e523b35e8774b05c2afcf8b6f9b87bc3a
     :git: https://github.com/seastart/vcs-meetlink-ios-cocoapods.git
   VCSWhiteBoardKit:
     :commit: 6eb575e9e6e7f0660b4c503824545b5de3bcc4a9
@@ -100,7 +100,7 @@ SPEC CHECKSUMS:
   SDWebImage: 9bec4c5cdd9579e1f57104735ee0c37df274d593
   SSZipArchive: fe6a26b2a54d5a0890f2567b5cc6de5caa600aef
   VCSMediaKit: 4dfff9ea5e55b65435689adcb07f7b3b74404c42
-  VCSMeetLink: dd7c4e4f61a7034e64f48307748260c4f8a0dde7
+  VCSMeetLink: 1be12adf0d6e02970398c5af3db6988cc8b678c0
   VCSWhiteBoardKit: 5b113d3eca6a6b93447662e54ccf2736e1f28ae7
   YYModel: 2a7fdd96aaa4b86a824e26d0c517de8928c04b30
 
